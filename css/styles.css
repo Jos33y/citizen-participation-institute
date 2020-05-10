@@ -184,5 +184,50 @@ header{
     line-height: 150%;
 }
 
+/* About US Styles */
 
+.bg-about-us{
+    background: url('../images/about.jpg');   
+    background-size: cover;
+}
+.about-para{
+    color: rgb(12, 12, 155); 
+    font-size: 17.5px;
+    letter-spacing: .5px;
+    line-height: 150%;
+}
 
+/* Volunteer Styles **/
+.bg-volunteer{
+    background: url('../images/volunteer.png');   
+    background-size: cover;
+}
+.red{
+    color: red;
+}
+.form-check{
+    display: block;
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+.form-check-input{
+   position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+}
+
+/** Contact US Styles **/
+.bg-contact{
+    background: url('../images/contact-us.png');   
+    background-size: cover;
+}
