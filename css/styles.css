@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|PT+Sans|PT+Serif|PT+Serif+Caption|Roboto|Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Roboto&family=Roboto+Slab:wght@500&display=swap');
+
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+    color: #4f4e4b;
+    background-color: #f2f1f6;
+}
+header{
+    background-color: #0e0d0d;
+    opacity: .6;
+
+}
+
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 8px;
+    color: #f2f1f6 !important;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+}
+
+.bg-header {
+    background: url('../images/bg-hand.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+
+}
+
+.index {
+    padding-top: 12%;
+}
+
+.header-text {
+    font-size: 57px;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: 'Acme', sans-serif;
+    text-transform: uppercase;
+}
+
+.sub-text {
+    font-size: 26px;
+    color: #ffffff;
+    font-family: 'Courgette', cursive;
+}
+
+.first-col {
+    margin: 2%;
+    margin-top: 8%;
+   
+}
+
+.book-image {
+    width: 250px;
+    background: #fff;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid rgb(22, 22, 22);
+}
+
+.caption {
+    font-size: 12px;
+}
+
+.text-one {
+    margin-top: 3%;
+    font-size: 40px;
+    font-weight: 400;
+    color: darkred;
+    font-family: 'Roboto Slab', serif;
+}
+
+.btn {
+    background-color: chocolate;
+    color: #fff;
+}
+
+.list {
+    list-style-type: none;
+
+
+}
+
+.list li a {
+    color: chocolate;
+    text-transform: uppercase;
+    font-family: 'Bitter', serif;
+   
+}
+
+/** Open Government Styles */
+.bg-open-government {
+    background: url('../images/open-government.jpg');   
+    background-size: cover;
+}
+
+.open-head{
+    font-size: 40px; 
+    color: rgb(12, 12, 155); 
+    letter-spacing: 1px;
+    font-family: 'Lobster', cursive;
+}
+.open-text{
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    line-height: 150%;
+
+}
+.small{
+    font-size: 14px;
+    color: chocolate;
+}
+.open-para{
+    font-size: 16px;
+    letter-spacing: .5px;
+    line-height: 150%;
+}
+.link{
+    color: chocolate;
+}
+.open-list li{
+    list-style-type: none;
+    display: inline;
+    margin: 1%;
+}
+
+/** Election Styles **/
+.bg-election {
+    background: url('../images/vote.png');   
+    background-size: cover;
+}
+.card{
+    margin: 3%;
+}
+
+/** Donate Styles **/
+.bg-donate{
+    background: url('../images/donate.png');   
+    background-size: cover;
+}
+.donate-head{
+    font-size: 35px; 
+    color: rgb(32, 32, 34); 
+    letter-spacing: 1px;
+    font-family: 'Lobster', cursive;
+}
+.donate-para{
+    font-size: 15px;
+    letter-spacing: .5px;
+    line-height: 150%;
+}
+
+/** Employment Styles **/
+.bg-employment{
+    background: url('../images/employment.png');   
+    background-size: cover;
+}
+.emp-text {
+    font-size: 57px;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.emp-head{
+    font-size: 32px; 
+    color: rgb(12, 12, 155); 
+    letter-spacing: 1px;
+    font-family: 'Lobster', cursive;
+}
+.emp-para{
+    font-size: 20px;
+    letter-spacing: .5px;
+    line-height: 150%;
+}
+
+
+
