@@ -1,0 +1,3 @@
+[submodule "c-maintenance-screen"]
+	path = c-maintenance-screen
+	url = https://github.com/Jos33y/maintenance-screen
