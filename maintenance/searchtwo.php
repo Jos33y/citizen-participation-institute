@@ -5,11 +5,12 @@ $title = "View Governments";
 include('dbcon.php');
 include('header.php'); 
 
+$home_kty = $_SESSION['ktyhm'];
+$fullspan_kty = $_SESSION['ktyfull'];
+
 ?>
 
-<!--no print div class -->
-<div class="noprint">
-
+<!--header image-->
     <!--header image-->
 
     <img src="images/screengold.jpg" alt="" class="back-image">
@@ -21,14 +22,9 @@ include('header.php');
         </h2>
         <hr width="15%" class="page-title-line">
 
-</div>
-</div>
 
-<div class="container-fluid">
         <!--table for ballot-->
         <div class="sty">
-        <button style="margin: 20px; font-weight: 600;" onclick="window.print()" class="btn btn-md btn-danger">Print this page</button>
-  
             <table class="table border-bottom border">
                 <thead>
                     <tr class="county-tble-head">
@@ -61,9 +57,14 @@ include('header.php');
                 </thead>
                 <tbody>
 
-                <?php
-            $i = 0;
-                $get_governments = "select * from governments  LIMIT 20";
+              
+          
+
+            <?php
+
+              $i = 0;
+
+                $get_governments = "select * from governments where KtyAbb = '$home_kty' AND FullSpan = '$fullspan_kty'";
                 $run_governments = mysqli_query($con, $get_governments);
                 while ($row = mysqli_fetch_array($run_governments)){
                     $gid = $row['id'];
@@ -129,3 +130,5 @@ include('header.php');
 
 
     <?php include('footer.php'); ?>
+
+
