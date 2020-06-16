@@ -1,20 +1,93 @@
+
 <?php 
+
+
 include('dbcon.php');
+
+if (isset($_POST['checkBase'])){
+    $response = '<ul><li>No data found</li><ul>';
+
+    $q = $con->real_escape_string($_POST['q']);
+
+    $sql = $con->query("SELECT DISTINCT NameSimple from governments WHERE NameSimple LIKE '%$q%'");
+    if($sql->num_rows > 0) {
+
+        $response = "<ul>";
+
+        while($data = $sql->fetch_array())
+        $response .= "<li class='name'>".$data['NameSimple']."</li>";
+
+        $response .= "</ul>";
+    }
+
+    exit($response);
+}
+
+elseif(isset($_POST['request'])){
+    $response = '<ul><li>No data found</li><ul>';
+
+    $q = $con->real_escape_string($_POST['g']);
+
+    $sql = $con->query("SELECT DISTINCT govtypename from govtype  WHERE govtypename LIKE '%$q%'");
+    if($sql->num_rows > 0) {
+
+        $response = "<ul>";
+
+        while($data = $sql->fetch_array())
+        $response .= "<li class='gname'>".$data['govtypename']."</li>";
+
+        $response .= "</ul>";
+    }
+
+    exit($response);
+}
+
+
+
+elseif(isset($_POST['checkdata'])){
+    $response = '<ul><li>No data found</li><ul>';
+
+    $q = $con->real_escape_string($_POST['p']);
+
+    $sql = $con->query("SELECT DISTINCT PublicBodyNameFormal from addresses  WHERE PublicBodyNameFormal LIKE '%$q%'");
+    if($sql->num_rows > 0) {
+
+        $response = "<ul>";
+
+        while($data = $sql->fetch_array())
+        $response .= "<li class='pbdnf'>".$data['PublicBodyNameFormal']."</li>";
+
+        $response .= "</ul>";
+    }
+
+    exit($response);
+}
+
+
+
+?>
+<?php 
+
 $title = "Search Database";
 
 include('header.php'); 
 
 ?>
 
+
+
+
 <!--no print div class -->
 <div class="noprint">
 
     <!--header image-->
+    <!--
     <img src="images/search.jpg" alt="" class="back-image">
+    -->
 
     <!-- page title-->
     <div class="container">
-        <h2 class="page-title blue">
+        <!--  <h2 class="page-title blue">
             Search Database
         </h2>
         <hr width="15%" class="page-title-line">
@@ -23,21 +96,21 @@ include('header.php');
         <!--table for ballot-->
 
         <div class="search-screen">
-            <form method="POST" class="screen-border">
+            <form method="POST" class="search-border">
 
                 <h1 class="search-head">ILGov Database</h1>
                 <div class="row">
                     <div class="col-md-2"></div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <table class="table table-borderless">
                             <tbody>
                                 <tr>
                                     <td width="57%" <label for="gov" class="search-one">Enter Record ID:</label>
 
                                     </td>
-                                    <td width="40%" class="search-gov">
+                                    <td width="50%" class="search-gov">
                                         <input type="text" name="govid" class="form-control" id="" maxlength="5"
-                                            placeholder="GovID">
+                                            placeholder="">
                                     </td>
                                 </tr>
 
@@ -68,13 +141,15 @@ include('header.php');
                 <div class="row">
                     <div class="col-md-12">
                         <table class="table table-borderless">
-                            <tbody class="search-part">
+                            <tbody>
                                 <tr>
-                                    <td width="30%">
+                                    <td width="15%" class="search-label">
                                         <label for="part" class="search-three">Part of Name</label>
                                     </td>
-                                    <td width="70%" >
-                                        <input type="text" name="part" id="#" class="form-control" placeholder="&#61442;">
+                                    <td width="85%" class="search-input">
+                                        <input type='text' name='pbdnf' class='form-control' placeholder="&#61442;" id="pbdnf">
+                                        <div id="bodyResponse"></div>
+
                                     </td>
                                 </tr>
                             </tbody>
@@ -87,42 +162,24 @@ include('header.php');
                     <div class="col-md-12">
 
                         <table class="table table-borderless">
-                            <tbody class="search-part">
+                            <tbody>
                                 <tr>
-                                    <td width="15%">
-                                        <label for="part" class="search-three">Sort as</label>
+                                    <td width="15%" class="search-label">
+                                        <label for="sort-as" class="search-three">Alternate name</label>
                                     </td>
-                                    <td width="35%">
-                                        <select name="sort_as" class="form-control">
-
-                                            <option> Sort AS </option>
-
-                                            <?php
-
-                                                $get_kty = "select DISTINCT NameSimple from governments";
-                                                $run_kty = mysqli_query($con , $get_kty);
-
-                                                while ($row_kty=mysqli_fetch_array($run_kty)){
-
-                                                    $namesimple = $row_kty['NameSimple'];
-
-                                                    echo "
-                                                    
-                                        <option value='$namesimple'> $namesimple </option>
-                                                    
-                                                    ";
-                                                }
-
-                                                ?>
-                                        </select>
+                                    <td width="90%" class="search-input">
+                                    <input type="text" name="nameSimple" class="form-control"
+                                            placeholder="&#61442;" id="nameSimple" >
+                                    <div id="response"></div>
                                     </td>
 
-                                    <td width="15%">
+                                    <td class="search-label">
                                         <label for="part" class="search-three">GovType</label>
                                     </td>
-                                    <td width="35%">
-                                        <input type="text" name="part" id="#" class="form-control"
-                                            placeholder="&#61442;">
+                                    <td width="90%" class="search-input">
+                                        <input type="text" name="govType" class="form-control"
+                                            placeholder="&#61442;" id="govType">
+                                            <div id="govResponse"></div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -145,13 +202,13 @@ include('header.php');
                     <div class="col-md-12">
 
                         <table class="table table-borderless">
-                            <tbody class="search-part">
+                            <tbody>
                                 <tr>
-                                    <td width="15%">
+                                    <td width="15%" class="search-label">
                                         <label for="counties" class="search-three">Counties
                                             <button type="button" class="btn btn-outline-light" data-toggle="modal"
                                                 data-target="#countyName">
-                                                <i class="fas fa-info"></i>
+                                                <i class="fas fa-info-circle"></i>
                                             </button></label>
 
 
@@ -161,7 +218,7 @@ include('header.php');
 
 
 
-                                    <td width="35%">
+                                    <td width="45%" class="search-input">
 
                                         <select name="home_kty" class="form-control">
 
@@ -176,6 +233,7 @@ include('header.php');
 
                                                     $kid = $row_kty['kid'];
                                                     $ktyabb = $row_kty['ktyabb'];
+                                                   
 
                                                     echo "
                                                     
@@ -188,7 +246,7 @@ include('header.php');
                                         </select>
                                     </td>
 
-                                    <td width="50%">
+                                    <td width="45%" class="search-input">
 
                                         <select name="fullspan_kty" class="form-control">
 
@@ -232,6 +290,7 @@ include('header.php');
                         </div>
                     </div>
                 </div>
+                <!-- end of form -->
             </form>
 
         </div>
@@ -267,11 +326,12 @@ include('header.php');
                                                     $kid = $row_kty['kid'];
                                                     $ktyname = $row_kty['namesimple'];
                                                     $ktyabb = $row_kty['ktyabb'];
+                                                    $code = $row_kty['dptrevcounty'];
 
                                                 ?>
                             <tr>
                                 <td style="font-size: 13px;"><?php echo $ktyname;  ?></td>
-                                <td style="font-size: 13px;"><?php echo $ktyabb;  ?></td>
+                                <td style="font-size: 13px;"><?php echo $ktyabb . " " . "(". $code . ")";  ?></td>
                             </tr>
 
                             <?php } ?>
@@ -284,7 +344,6 @@ include('header.php');
         </div>
     </div>
 
-
     <!--print end-->
 </div>
 
@@ -294,28 +353,76 @@ include('header.php');
 
     $govid = $_POST['govid'];
 
+    $pbdnf = $_POST['pbdnf'];
+
+    $govType = $_POST['govType'];
+
+    $nameSimple = $_POST['nameSimple'];
+
     $home_kty = $_POST['home_kty'];
 
     $fullspan_kty = $_POST['fullspan_kty'];
-
-    $sort_as = $_POST['sort_as'];
 
     $_SESSION['govid'] = $govid;
     /* Govid Search */
 
     if($govid){
 
+        $check = "select * from addresses where GovId = '$govid'";
+        $run_check = mysqli_query($con, $check);
+
+        if (mysqli_num_rows($run_check) == 1) {
+
+        
         echo "<script>window.open('search-result.php?govid=$govid', '_self')</script>";
+        }
+        else{
+
+            echo '
+            <script>
+                swal({
+                        title: "No GovId Found!",
+                        icon: "error",
+                     });
+        </script>
+        ';
+        }
 
     }
-    else{
+    elseif($pbdnf){
+        $get_address = "select * from addresses where PublicBodyNameFormal ='$pbdnf'";
 
+        $run_address = mysqli_query($con, $get_address);
+
+            if (mysqli_num_rows($run_address) == 1) {
+
+                $row = mysqli_fetch_array($run_address);
+                    $gvid = $row['GovId'];
+
+                    echo "<script>window.open('search-result.php?govid=$gvid', '_self')</script>";
+            }
+            else{
+                echo '
+                <script>
+                    swal({
+                            title: "No Public Body Formal Name Found!",
+                            icon: "error",
+                         });
+            </script>
+            ';
+
+            }
+
+
+    }
+
+    else{
     
     ?>
 
 
 <div class="sty">
-    <button style="margin: 20px; font-weight: 600;" onclick="window.print()" class="btn btn-md btn-danger">Print this
+    <button style="margin: 20px; font-weight: 600;" onclick="window.print()" class="btn btn-sm btn-danger">Print this
         page</button>
     <table class="table border-bottom border">
         <thead>
@@ -336,15 +443,152 @@ include('header.php');
         </thead>
         <tbody>
 
+            <!--GovType Search -->
 
+            <?php 
+                if($govType){
+                   
+                    $get_govtype = "select * from govtype where govtypename = '$govType'";
+        
+                    $run_govtype = mysqli_query($con, $get_govtype);
 
-            <!--Counties Search -->
-            <?php
+            if(mysqli_num_rows($run_govtype) >= 1) { 
+                $i = 0;
+                    $row = mysqli_fetch_array($run_govtype);
+        
+                    $gvtypeid = $row['govtypeid'];
+
+                   $get_govid = "select * from addresses where GovType = '$gvtypeid'";
+                   $run_govid = mysqli_query($con, $get_govid);
+
+                   while($row = mysqli_fetch_array($run_govid)){
+                   
+                    $gvid = $row['GovId'];
+                  
+                    $get_governments = "select * from governments where GovId = '$gvid'";
+                    $run_governments = mysqli_query($con, $get_governments);                             
+
+                        while ($row = mysqli_fetch_array($run_governments)){
+                            $gid = $row['id'];
+                            $gvid = $row['GovId'];
+                            $cmpid = $row['ComptrollerID'];
+                            $drt = $row['DptRevType'];
+                            $nmsimp = $row['NameSimple'];
+                            $ktyabb = $row['KtyAbb'];
+                            $nmfrm = $row['NameFormal'];
+                            $fulspan = $row['FullSpan'];
+                            $khnbr = $row['KtyHomeNbr'];
+                            $khab = $row['KtyHomeAbb'];
+                           
+                        }
+                        $i++;
+        ?>
+            <tr style="font-size:13px;">
+                <td><a style="text-decoration: none;" href="search-result.php?govid=<?php echo $gvid;?>"><i
+                            class="fas fa-edit"></i> Edit</a> </td>
+                <td><b><?php echo $i; ?> </b></td>
+                <td><?php echo $gvid; ?> </td>
+                <td><?php echo $cmpid; ?> </td>
+                <td><?php echo $drt; ?> </td>
+                <td><?php echo $nmsimp; ?> </td>
+                <td><?php echo $ktyabb; ?> </td>
+                <td><?php echo $nmfrm; ?> </td>
+                <td><?php echo $fulspan; ?> </td>
+                <td><?php echo $khnbr; ?> </td>
+                <td><?php echo $khab; ?> </td>
+            </tr>
+        <?php      }       
             
-              if($home_kty OR $fullspan_kty){
+              }
+            else{
+                        
+                echo '
+                <script>
+                    swal({
+                            title: "No Gov Type Name Found!",
+                            icon: "error",
+                        });
+            </script>
+            ';
+            }
+
+        } 
+
+         //--sort as search -->
+            
+         elseif($nameSimple){
+            $i = 0;
+
+            $get_governments = "select * from governments where NameSimple = '$nameSimple'";
+            $run_governments = mysqli_query($con, $get_governments);         
+            
+            if (mysqli_num_rows($run_governments) >= 1) {        
+
+            while ($row = mysqli_fetch_array($run_governments)){
+
+                $rowcount=mysqli_num_rows($run_governments);
+                $gid = $row['id'];
+                $gvid = $row['GovId'];
+                $cmpid = $row['ComptrollerID'];
+                $drt = $row['DptRevType'];
+                $nmsimp = $row['NameSimple'];
+                $ktyabb = $row['KtyAbb'];
+                $nmfrm = $row['NameFormal'];
+                $fulspan = $row['FullSpan'];
+                $khnbr = $row['KtyHomeNbr'];
+                $khab = $row['KtyHomeAbb'];
+                $i++;
+
+                if($rowcount >= '2'){  
+        
+           
+    ?>
+        <tr style="font-size:13px;">
+            <td><a style="text-decoration: none;" href="search-result.php?govid=<?php echo $gvid;?>"><i
+                        class="fas fa-edit"></i> Edit</a> </td>
+            <td><b><?php echo $i; ?> </b></td>
+            <td><?php echo $gvid; ?> </td>
+            <td><?php echo $cmpid; ?> </td>
+            <td><?php echo $drt; ?> </td>
+            <td><?php echo $nmsimp; ?> </td>
+            <td><?php echo $ktyabb; ?> </td>
+            <td><?php echo $nmfrm; ?> </td>
+            <td><?php echo $fulspan; ?> </td>
+            <td><?php echo $khnbr; ?> </td>
+            <td><?php echo $khab; ?> </td>
+        </tr>
+
+        <?php }
+    
+    elseif($rowcount == 1){
+
+        echo "<script>window.open('search-result.php?govid=$gvid', '_self')</script>";
+        
+    }
+    
+    } }
+    else{
+        echo '
+        <script>
+            swal({
+                    title: "No Alternate Name Found!",
+                    icon: "error",
+                 });
+    </script>
+    ';
+
+    }
+
+    }
+
+                //Counties search
+            
+              elseif($home_kty OR $fullspan_kty){
                 $i = 0;
                   $get_governments = "select * from governments where KtyAbb = '$home_kty' OR FullSpan = '$fullspan_kty'";
                 $run_governments = mysqli_query($con, $get_governments);
+
+                if (mysqli_num_rows($run_governments) >= 1) {
 
                 while ($row = mysqli_fetch_array($run_governments)){
                     $gid = $row['id'];
@@ -375,47 +619,24 @@ include('header.php');
                 <td><?php echo $khab; ?> </td>
             </tr>
 
-            <?php } } ?>
-
-            <!--sort as search -->
-            <?php
-              if($sort_as){
-                $i = 0;
-
-                $get_governments = "select * from governments where NameSimple = '$sort_as'";
-                $run_governments = mysqli_query($con, $get_governments);
-
-                while ($row = mysqli_fetch_array($run_governments)){
-                    $gid = $row['id'];
-                    $gvid = $row['GovId'];
-                    $cmpid = $row['ComptrollerID'];
-                    $drt = $row['DptRevType'];
-                    $nmsimp = $row['NameSimple'];
-                    $ktyabb = $row['KtyAbb'];
-                    $nmfrm = $row['NameFormal'];
-                    $fulspan = $row['FullSpan'];
-                    $khnbr = $row['KtyHomeNbr'];
-                    $khab = $row['KtyHomeAbb'];
-                    $i++;
+            <?php }
+              }
             
-               
-        ?>
-            <tr style="font-size:13px;">
-                <td><a style="text-decoration: none;" href="search-result.php?govid=<?php echo $gvid;?>"><i
-                            class="fas fa-edit"></i> Edit</a> </td>
-                <td><b><?php echo $i; ?> </b></td>
-                <td><?php echo $gvid; ?> </td>
-                <td><?php echo $cmpid; ?> </td>
-                <td><?php echo $drt; ?> </td>
-                <td><?php echo $nmsimp; ?> </td>
-                <td><?php echo $ktyabb; ?> </td>
-                <td><?php echo $nmfrm; ?> </td>
-                <td><?php echo $fulspan; ?> </td>
-                <td><?php echo $khnbr; ?> </td>
-                <td><?php echo $khab; ?> </td>
-            </tr>
+            else{
+                        
+                echo '
+                <script>
+                    swal({
+                            title: "No County Found!",
+                            icon: "error",
+                        });
+            </script>
+            ';
+            }
 
-            <?php } } ?>
+        }
+                  
+        ?>
 
 
         </tbody>
@@ -424,7 +645,10 @@ include('header.php');
 
 
     <?php
-       }   }
+       }  
+
+}
+
                 
             /* echo "<script>window.open('searchtwo.php', '_self')</script>";  
 
@@ -433,4 +657,5 @@ include('header.php');
    
 ?>
 
-    <?php include('footer.php'); ?>
+<?php include('footer.php');?>
+   

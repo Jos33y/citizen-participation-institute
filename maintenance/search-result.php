@@ -90,8 +90,8 @@ include('header.php');
 
     $parent = $row_gov['ParentID'];
  
-    $version_details = "This is the latest version";
-
+    $version_details = " <button style='font-weight: 600;' class='btn btn-sm btn-success'>This is the latest version</button>";
+    
     //$version_link = ", Click " . "<a href='search-result.php?govid=$gvid' class='text-white'>" . "here" . "</a> " . " to bring up latest version";
 
     $version_link =" ";
@@ -158,8 +158,8 @@ include('header.php');
        $parent = ""; 
 
         $timestamp = date("M-d-yy h:i:s A", strtotime($row_edit['timestamp']));
-     
-        $version_details = "This is not the latest version";
+       
+        $version_details = " <button style='font-weight: 600;' class='btn btn-md btn-danger'>This is not the latest version</button>";
     
         $version_link = ", Click " . "<a href='search-result.php?govid=$gvid' class='text-white'>" . "here" . "</a> " . " to bring up latest version";
     
@@ -171,11 +171,11 @@ include('header.php');
 <!--no print div -->
 <div class="noprint">
     <!--header image-->
-
+<!--
     <img src="images/screenblue.jpg" alt="" class="back-image">
 
     <!-- page title-->
-    <div class="container">
+  <!--  <div class="container">
         <h2 class="page-title blue">
             Screen Mode
         </h2>
@@ -184,14 +184,14 @@ include('header.php');
     </div>
 </div>
 <!--table for ballot-->
-<div class="container">
+<div class="container-fluid">
     <form method="POST" class="screen-border search-result address">
 
         <!--row one-->
         <div class="row version">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-10" style="font-weight: 600;">
-                <button style="font-weight: 600;" class="btn btn-md btn-danger"><?php echo $version_details; ?></button>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10" style="font-weight: 600; ">
+              <?php echo $version_details; ?>
                 <span class="version-time">It is from <?php echo $timestamp . $version_link; ?> </span>
             </div>
         </div>
@@ -200,7 +200,7 @@ include('header.php');
                 <table class="table table-borderless">
                     <tbody>
                         <tr>
-                            <td width="12%" class="search-rgov">
+                            <td width="15%" class="search-rgov">
                                 <label for="gov" class="sr-only">GovID </label>
                                 <input type="text" class="form-control" id="" value="<?php echo $gvid;?>" readonly>
 
@@ -227,14 +227,14 @@ include('header.php');
                     <tbody class="search-res">
                         <tr>
                             <td width="11%"></td>
-                            <td width="26%"><span class="address-text">Sort as</span>
+                            <td width="26%"><span class="address-text">Alternate name</span>
                                 <input type="text" class="form-control" id="" value="<?php echo $sort_as ;?>" readonly>
                                 <td />
 
-                            <td width="10%"><span class="address-text">GovType
+                            <td width="13%"><span class="address-text">GovType
                             <button type="button" class="btn btn-outline-light" data-toggle="modal"
                                                 data-target="#govTypeName">
-                                                <i class="fas fa-info"></i>
+                                                <i class="fas fa-info-circle"></i>
                                             </button></label>       
 
                             </span>
@@ -279,7 +279,7 @@ include('header.php');
                                 <input type="text" class="form-control" id="" value="<?php echo $hqpcity ;?>" readonly>
                             </td>
 
-                            <td width="5%">
+                            <td width="6%">
                                 <label for="gov" class="sr-only">State </label>
                                 <input type="text" class="form-control" id="" value="<?php echo $hqstate ;?>" readonly>
                             </td>
@@ -339,7 +339,7 @@ include('header.php');
                                 <input type="text" class="form-control" id="" value="<?php echo $hqmcity ;?>" readonly>
                             </td>
 
-                            <td width="5%">
+                            <td width="6%">
                                 <label for="gov" class="sr-only">State </label>
                                 <input type="text" class="form-control" id="" value="<?php echo $hqstate ;?>" readonly>
                             </td>
@@ -371,7 +371,7 @@ include('header.php');
                                 <input type="text" class="form-control" id="" value="<?php echo $foiaeaddress ;?>" readonly>
                                 <td />
 
-                            <td width="5%">
+                            <td width="6%">
                                 <label for="gov" class="sr-only">State </label>
                                 <input type="text" class="form-control" id="" value="<?php echo $foiastate ;?>"
                                     readonly>
@@ -442,7 +442,7 @@ include('header.php');
                         <tr>
                             <td width="11%"><span class="address-text">Cross References</span> </td>
 
-                            <td width="15%">
+                            <td width="18%">
                                 <span class="address-text">Revenue</span>
                                 <input type="text" class="form-control" id="" value="<?php echo $rev ;?>" readonly>
                             </td>
@@ -451,16 +451,16 @@ include('header.php');
                                 <input type="text" class="form-control" id="" value="<?php echo $cmpid ;?>" readonly>
                             </td>
 
-                            <td width="2%"><span class="address-text"> <br></span>
+                            <td width="7%"><span class="address-text"> <br></span>
                                 <input type="text" class="form-control" id="" value="<?php echo $othertypeid ;?>"
                                     readonly>
-                                <span class="address-note">&nbsp;State</span>
+                                    <span class="address-note"></span>
                             </td>
 
                             <td width="20%"><span class="address-text">Other</span>
                                 <input type="text" class="form-control" id="" value="<?php echo $othertypecode ;?>"
                                     readonly>
-                                <span class="address-note">Board of Education</span>
+                                <span class="address-note">State Board of Education</span>
                             </td>
 
                             <td width="12%"></td>
@@ -468,7 +468,7 @@ include('header.php');
                                 <span class="address-text">Counties
                                     <button type="button" class="btn btn-outline-light" data-toggle="modal"
                                         data-target="#countyName">
-                                        <i class="fas fa-info"></i>
+                                        <i class="fas fa-info-circle"></i>
                                     </button>
                                 </span></td>
                             <td width="8%">
@@ -639,11 +639,12 @@ include('header.php');
                                                     $kid = $row_kty['kid'];
                                                     $ktyname = $row_kty['namesimple'];
                                                     $ktyabb = $row_kty['ktyabb'];
+                                                    $code = $row_kty['dptrevcounty'];
 
                                                 ?>
                         <tr>
                             <td style="font-size: 13px;"><?php echo $ktyname;  ?></td>
-                            <td style="font-size: 13px;"><?php echo $ktyabb;  ?></td>
+                            <td style="font-size: 13px;"><?php echo $ktyabb . " " . "(". $code . ")"; ?></td>
                         </tr>
 
                         <?php } ?>
