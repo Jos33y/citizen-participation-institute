@@ -29,7 +29,6 @@ session_destroy();
 
     $aid = $row_edit['AddressId'];
     $gvid = $row_edit['GovId'];
-    $cmpid = $row_edit['ComptrollerID'];
     $pbdnfm = $row_edit['PublicBodyNameFormal'];
     $gvtype = $row_edit['GovType'];
     $weburl = $row_edit['WebsiteURL'];
@@ -87,6 +86,8 @@ session_destroy();
     $sort_as = $row_gov['NameSimple'];
 
     $parent = $row_gov['ParentID'];
+
+    $cmpid = $row_gov['ComptrollerID'];
 
 
     $kty = $row_gov['ElectionAuthority'];
@@ -540,11 +541,14 @@ session_destroy();
 
         <!--row one-->
         <div class="row version">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-10" style="font-weight: 600; ">
+            <div class="col-sm-8" style="font-weight: 600; ">
                 <?php echo $version_details; ?>
                 <span class="version-time">It is from <?php echo $timestamp . $version_link; ?> </span>
             </div>
+            <div class="col-sm-3 form-inline fast-s">
+            <input type="text" name="sgovid" class="form-control" id="" maxlength="6" placeholder=" Enter GovID">
+            <button class="btn btn-sm btn-primary" name="searchgovid" type="submit"> <i class="fab fa-searchengin"></i> </button>
+    </div>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -1076,6 +1080,38 @@ if(isset($_POST['unlock'])){
     
 
 }
+
+if(isset($_POST['searchgovid'])){
+
+    $govid = $_POST['sgovid'];
+
+    if($govid){
+
+        $check = "select * from addresses where GovId = '$govid'";
+        $run_check = mysqli_query($con, $check);
+
+        if (mysqli_num_rows($run_check) == 1) {
+
+        
+        echo "<script>window.open('search-result.php?govid=$govid', '_self')</script>";
+        }
+        else{
+
+            echo '
+            <script>
+                swal({
+                        title: "No GovId Found!",
+                        icon: "error",
+                     });
+        </script>
+        ';
+        }
+
+    }
+     
+ 
+ }
+ 
 
 
 /* code for Previous Button  */
