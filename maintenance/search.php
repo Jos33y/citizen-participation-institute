@@ -441,7 +441,7 @@ include('header.php');
                 echo '
                 <script>
                     swal({
-                            title: "No Public Body Formal Name Found!",
+                            title: "No Public Body Formal Name Found!!!",
                             icon: "error",
                          });
             </script>
