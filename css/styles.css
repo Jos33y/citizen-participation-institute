@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|PT+Sans|PT+Serif|PT+Serif+Caption|Roboto|Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Roboto&family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap');
 
 body {
     height: 100%;
@@ -11,15 +12,17 @@ body {
     color: #4f4e4b;
     background-color: #f2f1f6;
 }
-header{
+
+header {
     background-color: #0e0d0d;
     opacity: .6;
 
 }
 
 
+
 .nav-link {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     margin: 8px;
     color: #f2f1f6 !important;
@@ -56,13 +59,13 @@ header{
 .first-col {
     margin: 2%;
     margin-top: 8%;
-   
+
 }
 
 .book-image {
-    width: 250px;
+    width: 280px;
     background: #fff;
-    padding: 5px 5px 5px 5px;
+    padding: 5px 5px;
     border: 1px solid rgb(22, 22, 22);
 }
 
@@ -93,41 +96,46 @@ header{
     color: chocolate;
     text-transform: uppercase;
     font-family: 'Bitter', serif;
-   
+
 }
 
 /** Open Government Styles */
 .bg-open-government {
-    background: url('../images/open-government.jpg');   
+    background: url('../images/open-government.jpg');
     background-size: cover;
 }
 
-.open-head{
-    font-size: 40px; 
-    color: rgb(12, 12, 155); 
+.open-head {
+    font-size: 40px;
+    color: rgb(12, 12, 155);
     letter-spacing: 1px;
     font-family: 'Lobster', cursive;
 }
-.open-text{
+
+.open-text {
     font-size: 16px;
     font-weight: 700;
     letter-spacing: .5px;
     line-height: 150%;
 
 }
-.small{
+
+.small {
     font-size: 14px;
     color: chocolate;
 }
-.open-para{
+
+.open-para {
     font-size: 16px;
     letter-spacing: .5px;
     line-height: 150%;
 }
-.link{
+
+.link {
     color: chocolate;
 }
-.open-list li{
+
+.open-list li {
     list-style-type: none;
     display: inline;
     margin: 1%;
@@ -135,35 +143,39 @@ header{
 
 /** Election Styles **/
 .bg-election {
-    background: url('../images/vote.png');   
+    background: url('../images/vote.png');
     background-size: cover;
 }
-.card{
+
+.card {
     margin: 3%;
 }
 
 /** Donate Styles **/
-.bg-donate{
-    background: url('../images/donate.png');   
+.bg-donate {
+    background: url('../images/donate.png');
     background-size: cover;
 }
-.donate-head{
-    font-size: 35px; 
-    color: rgb(32, 32, 34); 
+
+.donate-head {
+    font-size: 35px;
+    color: rgb(32, 32, 34);
     letter-spacing: 1px;
     font-family: 'Lobster', cursive;
 }
-.donate-para{
+
+.donate-para {
     font-size: 15px;
     letter-spacing: .5px;
     line-height: 150%;
 }
 
 /** Employment Styles **/
-.bg-employment{
-    background: url('../images/employment.png');   
+.bg-employment {
+    background: url('../images/employment.png');
     background-size: cover;
 }
+
 .emp-text {
     font-size: 57px;
     font-weight: 600;
@@ -172,13 +184,15 @@ header{
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-.emp-head{
-    font-size: 32px; 
-    color: rgb(12, 12, 155); 
+
+.emp-head {
+    font-size: 32px;
+    color: rgb(12, 12, 155);
     letter-spacing: 1px;
     font-family: 'Lobster', cursive;
 }
-.emp-para{
+
+.emp-para {
     font-size: 20px;
     letter-spacing: .5px;
     line-height: 150%;
@@ -186,48 +200,82 @@ header{
 
 /* About US Styles */
 
-.bg-about-us{
-    background: url('../images/about.jpg');   
+.bg-about-us {
+    background: url('../images/about.jpg');
     background-size: cover;
 }
-.about-para{
-    color: rgb(12, 12, 155); 
+
+.about-para {
+    color: rgb(12, 12, 155);
     font-size: 17.5px;
     letter-spacing: .5px;
     line-height: 150%;
 }
 
 /* Volunteer Styles **/
-.bg-volunteer{
-    background: url('../images/volunteer.png');   
+.bg-volunteer {
+    background: url('../images/volunteer.png');
     background-size: cover;
 }
-.red{
+
+.red {
     color: red;
 }
-.form-check{
+
+.form-check {
     display: block;
-  position: relative;
-  padding-left: 15px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 }
-.form-check-input{
-   position: absolute;
-  top: 0;
-  left: 0;
-  height: 22px;
-  width: 22px;
+
+.form-check-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
 }
 
 /** Contact US Styles **/
-.bg-contact{
-    background: url('../images/contact-us.png');   
+.bg-contact {
+    background: url('../images/contact-us.png');
     background-size: cover;
+}
+
+/** Brown Background **/
+.bg-brown {
+    background-color: #d75f04;
+}
+
+.records {
+    margin-top: 5%;
+}
+
+.records-head {
+    font-size: 2.25em;
+    color: #5040ae;
+    font-family: 'Crimson Text', serif;
+}
+
+.records hr {
+    margin: 3% 0;
+}
+
+.records p {
+    font-size: 16px;
+    line-height: 1.5;
+
+}
+
+a.link{
+    color: #df5f04;
+    text-decoration: none;
 }
