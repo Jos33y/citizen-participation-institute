@@ -8,8 +8,9 @@ body {
     width: 100%;
     padding: 0%;
     margin: 0%;
-    font-family: 'Roboto', sans-serif;
-    color: #4f4e4b;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color:#666666;
     background-color: #f2f1f6;
 }
 
@@ -191,15 +192,13 @@ header {
 }
 
 .emp-head {
-    font-size: 32px;
-    color: rgb(12, 12, 155);
-    letter-spacing: 1px;
-    font-family: 'Lobster', cursive;
+    font-size: 2.25em;
+    color: #5040ae;
+    font-family: 'Crimson Text', serif;
 }
 
 .emp-para {
-    font-size: 20px;
-    letter-spacing: .5px;
+    font-size: 24px;
     line-height: 150%;
 }
 
@@ -284,3 +283,22 @@ a.link{
     color: #df5f04;
     text-decoration: none;
 }
+
+/** ELection SPreadsheet styles **/
+.spread-sheet{
+    margin-top: 5%;
+}
+.sheet-image{
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 1px solid #0e0d0d;
+}
+.spread-sheet h4{
+    margin-top: 5%;
+    font-size: 25px;
+    font-weight: 600;
+    color: #5040ae;
+   
+}
+
+
