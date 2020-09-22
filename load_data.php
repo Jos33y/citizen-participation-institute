@@ -1,7 +1,7 @@
 <?php  
  //load_data.php  
- $connect = mysqli_connect("localhost", "root", "", "citizenparticipation");
-//$connect = mysqli_connect("127.0.0.1:49841", "azure", "6#vWHD_$", "citizenparticipation");
+ //$connect = mysqli_connect("localhost", "root", "", "citizenparticipation");
+$connect = mysqli_connect("127.0.0.1:49841", "azure", "6#vWHD_$", "citizenparticipation");
 
  $output = '';  
  if(isset($_POST["webgrp"]))  
