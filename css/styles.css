@@ -111,10 +111,9 @@ header {
 }
 
 .open-head {
-    font-size: 40px;
-    color: rgb(12, 12, 155);
-    letter-spacing: 1px;
-    font-family: 'Lobster', cursive;
+    font-size: 2.25em;
+    color: #5040ae;
+    font-family: 'Crimson Text', serif;
 }
 
 .open-text {
@@ -154,6 +153,8 @@ header {
 
 .card {
     margin: 3%;
+    background: transparent;
+    border: 0px solid #000000;
 }
 
 /** Donate Styles **/
@@ -301,4 +302,31 @@ a.link{
    
 }
 
+/** Directors Styles **/
+.directors-image{
+    margin-top: 30%;
+    border: 1px solid #000000;
+    padding: 2px;
+    margin-bottom: 5%;
+}
 
+
+
+/** Resolve the problem Styles **/
+.resolve-one{
+    font-size: 2.2em;
+    color: #d75f04;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+.resolve-two{
+    font-size: 2.1em;
+    color: #000000;
+    font-family: 'Crimson Text', serif;
+}
+
+.resolve p{
+    font-size: 18px;
+    line-height: 1.5;
+}
