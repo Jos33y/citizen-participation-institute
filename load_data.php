@@ -6,9 +6,10 @@
  $output = '';  
  if(isset($_POST["webgrp"]))  
  {  
+
       if($_POST["webgrp"] != '')  
       {  
-           $sql = "SELECT * FROM governments WHERE webgroup = '".$_POST["webgrp"]."'"; 
+           $sql = "SELECT * FROM governments WHERE webgroup = '".$_POST["webgrp"]."' ORDER BY GovId DESC LIMIT 50"; 
            $query = mysqli_query($connect, $sql);  
            while($row_gov = mysqli_fetch_array($query)) {  
            $govid = $row_gov["GovId"];  
