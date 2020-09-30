@@ -43,47 +43,7 @@
 <body>
     <div class="bg-contact">
 
-        <header>
-
-            <div class="navbar navbar-expand-lg navbar-dark  sticky-top">
-                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon my-toggler "></span>
-                </button>
-                <div class="collapse navbar-collapse"></div>
-
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="open-government.html">Open Government <span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="elections.html">Elections</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="volunteer.html">Volunteer</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="donate.html">Donate</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact us<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="employment.html">Employment</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+        <?php  include('include/bg-header.php');  ?>
 
         <div class="text-left">
             <img src="images/4869420be83.png" alt="">
@@ -152,15 +112,20 @@
                 <div class="col-md-5" style="margin-left: 10%;">
                     <h2 class="donate-head"> Email addresses</h2>
 
-                    <span> General: <a style="text-decoration: none;" href="mailto:Info@CitizenParticipation.Org" class="link">
+                    <span> General: <a style="text-decoration: none;" href="mailto:Info@CitizenParticipation.Org"
+                            class="link">
                             Info@CitizenParticipation.Org </a> <br>
-                        Elections Desk: <a style="text-decoration: none;" href="mailto:Elections@CitizenParticipation.Org" class="link">
+                        Elections Desk: <a style="text-decoration: none;"
+                            href="mailto:Elections@CitizenParticipation.Org" class="link">
                             Elections@CitizenParticipation.Org </a> <br>
-                        Errors: <a style="text-decoration: none;" href="mailto:Accuracy@CitizenParticipation.Org" class="link">
+                        Errors: <a style="text-decoration: none;" href="mailto:Accuracy@CitizenParticipation.Org"
+                            class="link">
                             Accuracy@CitizenParticipation.Org </a> <br>
-                        Public Records: <a style="text-decoration: none;" href="mailto:FOIA@CitizenParticipation.Org" class="link">
+                        Public Records: <a style="text-decoration: none;" href="mailto:FOIA@CitizenParticipation.Org"
+                            class="link">
                             FOIA@CitizenParticipation.Org</a> <br>
-                        Public Meetings: <a style="text-decoration: none;" href="mailto:OMA@CitizenParticipation.Org" class="link">
+                        Public Meetings: <a style="text-decoration: none;" href="mailto:OMA@CitizenParticipation.Org"
+                            class="link">
                             OMA@CitizenParticipation.Org </a></span>
                     <p> <span style="font-weight: 600;margin-top: 3%;"> Telephone Number: </span>
                         (630) 791-0397‬</p>
@@ -175,13 +140,7 @@
             </div>
         </div>
     </div>
-    <hr style="margin-top: 20%;" width="70%">
-    <div class="footer">
-        <div class="col-md-12">
-            <p class="text-center" style="font-size: 13px; color: darkred;"> &copy 2020 All right reserved Citizen
-                Participation Institute</p>
-        </div>
-    </div>
+    <?php  include('include/footer.php');  ?>
 </body>
 
 </html>

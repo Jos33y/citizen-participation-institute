@@ -43,57 +43,7 @@
 <body>
   <div class="bg-header">
 
-    <header>
-      <div class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon my-toggler "></span>
-        </button>
-        <div class="collapse navbar-collapse"></div>
-
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="open-government.html" id="#navbarDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open Government</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li> <a class="dropdown-item" href="#">Open Meetings</a></li>
-                <li><a class="dropdown-item" href="#">Open Records</a></li>
-                <li><a class="dropdown-item" href="#">Economic Interests</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="elections.html">Elections</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="volunteer.html">Volunteer</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="donate.html">Donate</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="about.html" id="#navbarDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About US</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li> <a class="dropdown-item" href="executive-director.html">Executive Director</a></li>
-                <li><a class="dropdown-item" href="incorporator-shannon-burns.html">Incorporator Shannon Burns</a></li>
-                <li><a class="dropdown-item" href="incorporator-burt-minor.html">Incorporator Burt Minor</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="employment.html">Employment</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
+    <?php  include('include/bg-header.php');  ?>
 
     <div class="index text-center">
       <br>
@@ -106,8 +56,6 @@
   </div>
 
   <!-- Practice code -->
-
-
 
   <!-- practice code end -->
 
@@ -156,16 +104,16 @@
         <div class="row">
           <div class="col-md-6">
             <ul class="list">
-              <li><a href="open-government.html">Open Government</a></li>
-              <li><a href="elections.html">Elections</a></li>
-              <li><a href="about.html">What We Do</a></li>
-              <li><a href="donate.html">Donate</a></li>
+              <li><a href="open-government.php">Open Government</a></li>
+              <li><a href="elections.php">Elections</a></li>
+              <li><a href="about.php">What We Do</a></li>
+              <li><a href="donate.php">Donate</a></li>
             </ul>
 
           </div>
           <div class="col-md-6">
             <ul class="list">
-              <li><a href="volunteer.html">Volunteer</a></li>
+              <li><a href="volunteer.php">Volunteer</a></li>
               <li><a href="uploads/2019_localelectionsguide_11.pdf" target="_blank">Local Elections Guide</a></li>
               <li><a href="uploads/2021_401-candidatepacketkit-public.pdf" target="_blank">Nomination Forms</a></li>
               <li><a href="">Nomination Challenges</a></li>
@@ -176,15 +124,7 @@
       </div>
     </div>
 
-
-    <hr style="margin-top: 20%;" width="70%">
-    <div class="footer">
-      <div class="col-md-12">
-        <p class="text-center" style="font-size: 13px; color: darkred;"> &copy 2020 All right reserved Citizen
-          Participation Institute</p>
-      </div>
-    </div>
-
+    <?php  include('include/footer.php');  ?>
 
 </body>
 

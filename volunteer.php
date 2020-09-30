@@ -43,48 +43,7 @@
 <body>
     <div class="bg-volunteer">
 
-        <header>
-
-            <div class="navbar navbar-expand-lg navbar-dark sticky-top">
-                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon my-toggler "></span>
-                </button>
-                <div class="collapse navbar-collapse"></div>
-
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="open-government.html">Open Government</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="elections.html">Elections </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="volunteer.html">Volunteer <span
-                                    class="sr-only">(current)</span></a></a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="donate.html">Donate </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="employment.html">Employment
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+        <?php  include('include/bg-header.php');  ?>
 
         <div class="text-left">
 
@@ -256,74 +215,76 @@
                     <br>
                 </div>
                 <div class="col-md-6">
-                <div class="form-group">
-                    <table class="table table-borderless">
-                        <p><span class="red">*</span><i> Indicates required field</i></p>
+                    <div class="form-group">
+                        <table class="table table-borderless">
+                            <p><span class="red">*</span><i> Indicates required field</i></p>
 
-                        <tbody>
-                            <tr>
-                                &nbsp;&nbsp; Name <span class="red">*</span>
-                                <td><input type="text" class="form-control" placeholder="First name" id="fname"></td>
-                                <td><input type="text" class="form-control" placeholder="Last name" id="lname"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    Email <span class="red">*</span>
-                                    <input type="email" class="form-control" placeholder="Email" id="email">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    Address
-                                    <input type="text" class="form-control" placeholder="Line 1" id="lineone">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <input type="text" class="form-control" placeholder="Line 2" id="linetwo">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" placeholder="City">
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control" placeholder="State">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="text" class="form-control" placeholder="Zip Code">
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control" placeholder="Country">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">
-                                    Phone Number (daytime)
-                                    <input type="text" class="form-control">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="1">
-                                    Phone Number (evening)
-                                    <input type="text" class="form-control">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    Comment <span class="red">*</span>
-                                    <textarea name="comment" class="form-control" id="" cols="45" rows="9"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button class="btn btn-lg" name="submit" type="submit">Submit</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <tbody>
+                                <tr>
+                                    &nbsp;&nbsp; Name <span class="red">*</span>
+                                    <td><input type="text" class="form-control" placeholder="First name" id="fname">
+                                    </td>
+                                    <td><input type="text" class="form-control" placeholder="Last name" id="lname"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        Email <span class="red">*</span>
+                                        <input type="email" class="form-control" placeholder="Email" id="email">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        Address
+                                        <input type="text" class="form-control" placeholder="Line 1" id="lineone">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <input type="text" class="form-control" placeholder="Line 2" id="linetwo">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="City">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="State">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="Zip Code">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" placeholder="Country">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1">
+                                        Phone Number (daytime)
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1">
+                                        Phone Number (evening)
+                                        <input type="text" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        Comment <span class="red">*</span>
+                                        <textarea name="comment" class="form-control" id="" cols="45"
+                                            rows="9"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button class="btn btn-lg" name="submit" type="submit">Submit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </form>

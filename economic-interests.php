@@ -43,47 +43,7 @@
 <body>
     <div class="bg-open-government">
 
-        <header>
-
-            <div class="navbar navbar-expand-lg navbar-dark  sticky-top">
-                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon my-toggler "></span>
-                </button>
-                <div class="collapse navbar-collapse"></div>
-
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="open-government.html">Open Government <span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="elections.html">Elections</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="volunteer.html">Volunteer</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="donate.html">Donate</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="employment.html">Employment</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+        <?php  include('include/bg-header.php');  ?>
 
         <div class="text-left">
             <img src="images/4869420be83.png" alt="">
@@ -171,14 +131,7 @@
     </div>
 
 
-    <hr style="margin-top: 8%;" width="70%">
-    <div class="footer">
-        <div class="col-md-12">
-            <p class="text-center" style="font-size: 13px; color: darkred;"> &copy 2020 All right reserved
-                Citizen
-                Participation Institute</p>
-        </div>
-    </div>
+    <?php  include('include/footer.php');  ?>
 </body>
 
 </html>

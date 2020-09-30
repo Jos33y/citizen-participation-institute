@@ -43,47 +43,7 @@
 <body>
     <div class="bg-open-government">
         
-        <header>
-
-            <div class="navbar navbar-expand-lg navbar-dark  sticky-top">
-                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon my-toggler "></span>
-                </button>
-                <div class="collapse navbar-collapse"></div>
-
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="open-government.html">Open Government <span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="elections.html">Elections</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="volunteer.html">Volunteer</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="donate.html">Donate</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="employment.html">Employment</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+    <?php  include('include/bg-header.php');  ?>
 
         <div class="text-left">
             <img src="images/4869420be83.png" alt="">
@@ -106,7 +66,7 @@
                 Illinois,
                 8,511 in all. Most of them have their own elected boards, but seldom have enough candidates at election
                 time.
-                <a style="text-decoration: none;" href="#" class="small">Click here for contact information of those
+                <a style="text-decoration: none;" href="record-request.php" class="small">Click here for contact information of those
                     public bodies.</a></h4>
             <br>
             <h4 class="open-text"> The owners of anything have a right to know what is going on, and to influence
@@ -122,7 +82,7 @@
             </h4>
             <br>
             <p class="open-para">
-                The <a style="text-decoration: none;" href="#" class="link">Open Meetings Act</a> gives anyone
+                The <a style="text-decoration: none;" href="open-meetings.php" class="link">Open Meetings Act</a> gives anyone
                 (regardless of where they live) the right to attend meetings of public bodies, to be aware in advance of
                 what will be
                 discussed or voted upon, to address the assembly, and to freely make audio or video recordings of the
@@ -131,18 +91,18 @@
 
             <br>
             <p class="open-para">
-                The <a style="text-decoration: none;" href="#" class="link">Freedom of Information Act</a> generally
+                The <a style="text-decoration: none;" href="open-records.php" class="link">Freedom of Information Act</a> generally
                 provides that
                 anyone is entitled to inspect, copy, and have a copy of any public record in the possession or under the
                 control
                 of any public body. That includes emails or texts on an official's private computer or phone that relate
                 to public business.
-                <a style="text-decoration: none;" href="#" class="link"> Click here to request a public record.</a>
+                <a style="text-decoration: none;" href="record-request.php" class="link"> Click here to request a public record.</a>
             </p>
 
             <br>
             <p class="open-para">
-                The <a style="text-decoration: none;" href="#" class="link">Governmental Ethics Act</a> requires all
+                The <a style="text-decoration: none;" href="economic-interests.php" class="link">Governmental Ethics Act</a> requires all
                 elected officials, candidates,
                 and certain public employees to annually file (usually before May 31 every year), a form that nominally
                 is designed to disclose potential conflicts of interest.
@@ -150,7 +110,7 @@
 
             <br>
             <p class="open-para">
-                The <a style="text-decoration: none;" href="#" class="link"> Citizen Participation Act</a> provides a
+                The <a style="text-decoration: none;" href="http://www.dmlp.org/legal-guide/anti-slapp-law-illinois" class="link"> Citizen Participation Act</a> provides a
                 way to have the court quickly dismiss a suit that was really filed just to scare the defendant from
                 participating in government,
                 petitioning, speaking out, or associating with those who do. The bully can even be ordered to pay the
@@ -159,21 +119,15 @@
         </div>
 
         <ul class="open-list">
-            <li><a style="text-decoration: none;" href="#" class="btn">Learn more about Open Meetings</a></li>
-            <li><a style="text-decoration: none;" href="#" class="btn">Learn more about Open Records</a></li>
-            <li><a style="text-decoration: none;" href="#" class="btn">Learn more about Economic Interests
+            <li><a style="text-decoration: none;" href="open-meetings.php" class="btn">Learn more about Open Meetings</a></li>
+            <li><a style="text-decoration: none;" href="open-records.php" class="btn">Learn more about Open Records</a></li>
+            <li><a style="text-decoration: none;" href="economic-interests.php" class="btn">Learn more about Economic Interests
                     Statements</a></li>
         </ul>
     </div>
 
+    <?php  include('include/footer.php');  ?>
 
-    <hr style="margin-top: 20%;" width="70%">
-    <div class="footer">
-        <div class="col-md-12">
-            <p class="text-center" style="font-size: 13px; color: darkred;"> &copy 2020 All right reserved Citizen
-                Participation Institute</p>
-        </div>
-    </div>
 </body>
 
 </html>

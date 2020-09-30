@@ -41,46 +41,7 @@
 </head>
 <div class="bg-election">
 
-    <header>
-
-        <div class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon my-toggler "></span>
-            </button>
-            <div class="collapse navbar-collapse"></div>
-
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="open-government.html">Open Government</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="elections.html">Elections <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="volunteer.html">Volunteer</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="donate.html">Donate</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="employment.html">Employment</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    <?php  include('include/bg-header.php');  ?>
 
     <div class="text-left">
         <img src="images/4869420be83.png" alt="">
@@ -101,10 +62,10 @@
             library board, park board, fire board, and other local public bodies. </p>
         <br>
         <div class="text-center">
-            <a href="resolving-the-problem.html" class="btn btn-lg">Click Here to Download the Free Starter Kit</a><br>
-            <a href="resolving-the-problem.html" class="btn btn-lg">Click Here to Download the Local Elections
+            <a href="resolving-the-problem.php" class="btn btn-lg">Click Here to Download the Free Starter Kit</a><br>
+            <a href="resolving-the-problem.php" class="btn btn-lg">Click Here to Download the Local Elections
                 Guide</a><br>
-            <a href="resolving-the-problem.html" class="btn btn-lg">Click Here for a List of Election Attorneys</a>
+            <a href="resolving-the-problem.php" class="btn btn-lg">Click Here for a List of Election Attorneys</a>
         </div>
     </div>
 </div>
@@ -354,24 +315,16 @@
 
     <div class="row">
         <div class="col-md-6 text-center">
-            <a href="donate.html" class="btn btn-lg" style="padding: 10px 35px;" target="_blank">Donate</a>
+            <a href="donate.php" class="btn btn-lg" style="padding: 10px 35px;" target="_blank">Donate</a>
         </div>
 
         <div class="col-md-6 text-center">
-            <a href="volunteer.html" class="btn btn-lg" style="padding: 10px 35px;" target="_blank">Volunteer</a>
+            <a href="volunteer.php" class="btn btn-lg" style="padding: 10px 35px;" target="_blank">Volunteer</a>
         </div>
     </div>
 </div>
 
-
-
-<hr style="margin-top: 8%;" width="70%">
-<div class="footer">
-    <div class="col-md-12">
-        <p class="text-center" style="font-size: 13px; color: darkred;"> &copy 2020 All right reserved Citizen
-            Participation Institute</p>
-    </div>
-</div>
+<?php  include('include/footer.php');  ?>
 </body>
 
 </html>

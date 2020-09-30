@@ -43,61 +43,7 @@
 <body>
     <div class="bg-about-us">
 
-        <header>
-
-            <div class="navbar navbar-expand-lg navbar-dark sticky-top">
-                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon my-toggler "></span>
-                </button>
-                <div class="collapse navbar-collapse"></div>
-
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="open-government.html" id="#navbarDropdown"
-                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Open
-                                Government</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li> <a class="dropdown-item" href="#">Open Meetings</a></li>
-                                <li><a class="dropdown-item" href="#">Open Records</a></li>
-                                <li><a class="dropdown-item" href="#">Economic Interests</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="elections.html">Elections</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="volunteer.html">Volunteer</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="donate.html">Donate</a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="about.html" id="#navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About US</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li> <a class="dropdown-item" href="executive-director.html">Executive Director</a></li>
-                                <li><a class="dropdown-item" href="incorporator-shannon-burns.html">Incorporator Shannon
-                                        Burns</a></li>
-                                <li><a class="dropdown-item" href="incorporator-burt-minor.html">Incorporator Burt
-                                        Minor</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="employment.html">Employment</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+    <?php  include('include/bg-header.php');  ?>
 
         <div class="text-left">
 
@@ -112,16 +58,16 @@
                 The Citizen Participation Institute is a <a style="text-decoration: none;" href="uploads/501c3approvalletter.pdf" class="link">
                     tax-deductible </a> nonpartisan Illinois charity <a style="text-decoration: none;" href="uploads/articlesofincorporation.pdf"
                     class="link"> founded in 2015 </a>by incorporators
-                <a style="text-decoration: none;" href="executive-director.html" class="link"> Stanley R. Zegel</a>,
-                <a style="text-decoration: none;" href="incorporator-shannon-burns.html" class="link"> Shannon M. Burns</a>, and
-                <a style="text-decoration: none;" href="incorporator-burt-minor.html" class="link"> Burton D. Minor </a>to aid area citizens in
+                <a style="text-decoration: none;" href="executive-director.php" class="link"> Stanley R. Zegel</a>,
+                <a style="text-decoration: none;" href="incorporator-shannon-burns.php" class="link"> Shannon M. Burns</a>, and
+                <a style="text-decoration: none;" href="incorporator-burt-minor.php" class="link"> Burton D. Minor </a>to aid area citizens in
                 exercising their rights to
-                <a style="text-decoration: none;" href="open-government.html" class="link"> open government.</a>
+                <a style="text-decoration: none;" href="open-government.php" class="link"> open government.</a>
             </p>
             <br>
             <p class="about-para">
                 One of our initiatives is to increase the probability of voters having
-                <a style="text-decoration: none;" href="can-you-believe-this.html" class="link"> actual choices </a> they can make in
+                <a style="text-decoration: none;" href="can-you-believe-this.php" class="link"> actual choices </a> they can make in
                 nonpartisan elections.
                 Most offices have only one candidate, but by making it easier for others to run too, voters can have a
                 choice instead of a default.
@@ -131,9 +77,9 @@
             <p class="about-para">
 
                 We publish materials related to the
-                <a style="text-decoration: none;" href="open-records.html" class="link"> Freedom of Information Act</a>, the
-                <a style="text-decoration: none;" href="open-meetings.html" class="link">Open Meetings Act</a>, and the
-                <a style="text-decoration: none;" href="economic-interests.html" class="link">Statements of Economic Interests</a> required by
+                <a style="text-decoration: none;" href="open-records.php" class="link"> Freedom of Information Act</a>, the
+                <a style="text-decoration: none;" href="open-meetings.php" class="link">Open Meetings Act</a>, and the
+                <a style="text-decoration: none;" href="economic-interests.php" class="link">Statements of Economic Interests</a> required by
                 the
                 <a style="text-decoration: none;" href="https://www.ilga.gov/legislation/ilcs/ilcs4.asp?DocName=000504200HArt%2E+4A&ActID=129&ChapterID=2&SeqStart=5750000&SeqEnd=6700000" class="link">Governmental Ethics Act</a>, including
                 compilations of legal precedents under those Sunshine Laws. We assist citizens who are experiencing
@@ -156,9 +102,9 @@
             <br>
             <p class="about-para">
                 We are publishing a
-                <a style="text-decoration: none;" href="resolving-the-problem.html" class="link"> directory of nonpartisan elective local
+                <a style="text-decoration: none;" href="resolving-the-problem.php" class="link"> directory of nonpartisan elective local
                     offices</a> to attract more candidates, and will allow candidates to
-                <a style="text-decoration: none;" href="resolving-the-problem.html" class="link"> download all of the paperwork they need </a> to
+                <a style="text-decoration: none;" href="resolving-the-problem.php" class="link"> download all of the paperwork they need </a> to
                 run for a local office such as mayor, city council, village president, village board, school board, fire
                 board, park board, library board and other nonpartisan offices.
             </p>
@@ -168,15 +114,15 @@
                 We will be publishing a free newspaper for local government officials and other interested persons that
                 educates officials on the latest developments in Illinois open government affairs. It will include
                 summaries of the latest court decisions and administrative interpretations of the
-                <a style="text-decoration: none;" href="open-records.html" class="link"> Freedom of Information Act</a> and the
-                <a style="text-decoration: none;" href="open-meetings.html" class="link"> Open Meetings Act</a>.
+                <a style="text-decoration: none;" href="open-records.php" class="link"> Freedom of Information Act</a> and the
+                <a style="text-decoration: none;" href="open-meetings.php" class="link"> Open Meetings Act</a>.
             </p>
 
             <br>
             <p class="about-para">
                 We depend upon
-                <a style="text-decoration: none;" href="volunteer.html" class="link"> volunteers</a> and
-                <a style="text-decoration: none;" href="donate.html" class="link"> donations</a> to operate, and invite them from
+                <a style="text-decoration: none;" href="volunteer.php" class="link"> volunteers</a> and
+                <a style="text-decoration: none;" href="donate.php" class="link"> donations</a> to operate, and invite them from
                 foundations, businesses, and individuals.
 
             </p>
@@ -196,7 +142,7 @@
                             Winfield IL 60190-1556
                         </td>
                         <td>
-                            <a href="executive-director.html" class="btn">Stanley R. Zegel</a><br><br>
+                            <a href="executive-director.php" class="btn">Stanley R. Zegel</a><br><br>
                             Executive Director<br>
                             (630) 220-0700<br>
                             Director@CitizenParticipation.Org
@@ -217,10 +163,10 @@
 
                     </td>
                     <td>
-                        <a href="donate.html" class="btn btn-lg">Donate</a><br><br>
+                        <a href="donate.php" class="btn btn-lg">Donate</a><br><br>
                     </td>
                     <td>
-                        <a href="volunteer.html" class="btn btn-lg">Volunteer</a><br><br>
+                        <a href="volunteer.php" class="btn btn-lg">Volunteer</a><br><br>
                     </td>
                 </tr>
             </thead>
@@ -229,13 +175,8 @@
     </div>
     </div>
 
-    <hr style="margin-top: 10%;" width="70%">
-    <div class="footer">
-        <div class="col-md-12">
-            <p class="text-center" style="font-size: 13px; color: darkred;"> &copy 2020 All right reserved Citizen
-                Participation Institute</p>
-        </div>
-    </div>
+    <?php  include('include/footer.php');  ?>
+
 </body>
 
 </html>
