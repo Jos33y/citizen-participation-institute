@@ -1,4 +1,5 @@
 <?php
+$title = "Record Request";
  include('include/dbcon.php');
  include('include/header.php');
 
@@ -13,7 +14,8 @@
 ?>
 <!--Body of page-->
 <div class="container records">
-    <h3 class="records-head text-center">Contact Information for all <?php echo $rowcount; ?> Units of Local Government in Illinois
+    <h3 class="records-head text-center">Contact Information for all <?php echo $rowcount; ?> Units of Local Government
+        in Illinois
     </h3>
 
     <div class="selection">
@@ -44,20 +46,26 @@
                 <thead style="background-color: #5040ae; color:#fff;">
                     <tr>
                         <!--the table heading -->
-                        <th width="23%">Public Body Name</th>
-                        <th width="25%">FOIA Address</th>
+                        <th width="40%">Public Body Name</th>
+                        <th width="35%">FOIA Address</th>
                         <th width="10%"><span style="font-weight:normal">&#8203;</span><strong>FOIA Email</strong></th>
-                        <th width="25%">Office Phone</th>
+                        <th width="15%">Office Phone</th>
                     </tr>
                 </thead>
+
+                <!-- Image loader -->
+<div id='loader' style='display: none;' class="text-center" >
+  <img src="images/loading.gif" width="50px" height="50px" style="margin-bottom:2%;" >
+</div>
+<!-- Image loader -->
                 <tbody id="display">
                 </tbody>
-               
+
             </table>
         </div>
     </div>
 
-   <!-- <div id="loader" style="text-align:center;"><img src="images/loading.gif" /></div> -->
+    <!-- <div id="loader" style="text-align:center;"><img src="images/loading.gif" /></div> -->
 
 
     <hr>
@@ -134,40 +142,18 @@
                 data: {
                     webgrp: webgrp
                 },
+                beforeSend: function () {
+                    // Show image container
+                    $("#loader").show();
+                },
                 success: function (data) {
                     $('#display').html(data);
+                },
+                complete: function (data) {
+                    // Hide image container
+                    $("#loader").hide();
                 }
             });
         });
     });
-
-
- var limit = 20; //The number of records to display per request
- var start = 0; //The starting pointer of the data
- var action = 'inactive'; //Check if current action is going on or not. If not then inactive otherwise active
- function load_country_data(limit, start)
- {
-  $.ajax({
-   url:"load_data.php",
-   method:"POST",
-   data:{limit:limit, start:start},
-   cache:false,
-   success:function(data)
-   {
-    $('#load_data').append(data);
-    if(data == '')
-    {
-     $('#load_data_message').html("<button type='button' class='btn btn-info'>No Data Found</button>");
-     action = 'active';
-    }
-    else
-    {
-     $('#load_data_message').html("<button type='button' class='btn btn-warning'>Please Wait....</button>");
-     action = 'inactive';
-    }
-    
-   }
-  });
- }
-
 </script>
