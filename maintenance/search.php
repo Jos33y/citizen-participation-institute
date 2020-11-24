@@ -430,7 +430,7 @@ include('header.php');
 
         $run_address = mysqli_query($con, $get_address);
 
-            if (mysqli_num_rows($run_address) == 1) {
+            if (mysqli_num_rows($run_address) == 2) {
 
                 $row_address = mysqli_fetch_array($run_address);
                     $gvid = $row_address['GovId'];
@@ -457,7 +457,7 @@ include('header.php');
 
         $run_address = mysqli_query($con, $get_address);
 
-            if (mysqli_num_rows($run_address) == 1) {
+            if (mysqli_num_rows($run_address) == 2) {
 
                 $row = mysqli_fetch_array($run_address);
                     $gvid = $row['GovId'];

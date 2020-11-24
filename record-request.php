@@ -19,6 +19,7 @@ $title = "Record Request";
     </h3>
 
     <div class="selection">
+
         <div class="form-group">
             <select name="uog" id="UOG" class="form-control">
                 <!--form-control Begin -->
@@ -32,6 +33,14 @@ $title = "Record Request";
                                         <option value='$webgrp'>$webgrp</option>
                                         ";
                                     }
+
+                                    if($webgrp == 'County'){
+
+                                        $webtitles = "The 28 Cemetery Maintenance Districts in Illinois";
+                                    }
+                                    else{
+                                        $webtitles ="school down";
+                                    }
                                     ?>
 
             </select>
@@ -39,6 +48,10 @@ $title = "Record Request";
         </div>
 
     </div>
+
+   <!-- <div class="container text-center">
+<h3 class="records-head"> Shop name <?php echo $webtitles; ?> </h3>
+</div> -->
 
     <div class="container">
         <div class="table">
@@ -49,7 +62,7 @@ $title = "Record Request";
                         <th width="40%">Public Body Name</th>
                         <th width="35%">FOIA Address</th>
                         <th width="10%"><span style="font-weight:normal">&#8203;</span><strong>FOIA Email</strong></th>
-                        <th width="15%">Office Phone</th>
+                        <th width="18%">Office Phone</th>
                     </tr>
                 </thead>
 
@@ -59,13 +72,14 @@ $title = "Record Request";
 </div>
 <!-- Image loader -->
                 <tbody id="display">
+                <?php include('load_data.php'); ?>
                 </tbody>
 
             </table>
         </div>
     </div>
 
-    <!-- <div id="loader" style="text-align:center;"><img src="images/loading.gif" /></div> -->
+    <div id="loader" style="text-align:center;"><img src="images/loading.gif" /></div> 
 
 
     <hr>
@@ -133,7 +147,47 @@ $title = "Record Request";
 
 </html>
 <script>
-    $(document).ready(function () {
+$(document).ready(function(){ 
+    $('#UOG').change(function () {
+            var webgrp = $(this).val();
+	$(window).scroll(function(){
+		if ($(window).scrollTop() == $(document).height() - $(window).height()){
+			if($(".page_number:last").val() <= $(".total_record").val()) {
+				var pagenum = parseInt($(".page_number:last").val()) + 1;
+				loadRecords('load_data.php?page='+pagenum);
+			}
+		}
+	});	
+});
+});
+
+function loadRecords(url) {
+	$.ajax({
+        url: url,
+        type: "GET",
+        data: {
+                    webgrp: webgrp,
+                    total_record:$("#total_record").val()
+                },
+		beforeSend: function(){
+			$('#loader').show();
+		},
+		
+		success: function(data){			
+			$("#display").html(data);
+        },
+        complete: function(){
+			$('#loader').hide();			
+		},
+		error: function(){
+
+        }
+
+}
+
+
+
+   /* $(document).ready(function () {
         $('#UOG').change(function () {
             var webgrp = $(this).val();
             $.ajax({
@@ -155,5 +209,5 @@ $title = "Record Request";
                 }
             });
         });
-    });
+    }); */
 </script>

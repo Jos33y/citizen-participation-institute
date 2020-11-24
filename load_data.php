@@ -1,16 +1,35 @@
 <?php  
  //load_data.php  
- //$connect = mysqli_connect("localhost", "root", "", "citizenparticipation");
- $connect = mysqli_connect("127.0.0.1:49841", "azure", "6#vWHD_$", "citizenparticipation");
+ $connect = mysqli_connect("localhost", "root", "", "citizenparticipation");
+ //$connect = mysqli_connect("127.0.0.1:49841", "azure", "6#vWHD_$", "citizenparticipation");
 
  $output = '';  
- if(isset($_POST["webgrp"]))  
+ if(isset($_GET["webgrp"]))  
  {  
 
-      if($_POST["webgrp"] != '')  
+      if($_GET["webgrp"] != '')  
       {  
-           $sql = "SELECT * FROM governments WHERE webgroup = '".$_POST["webgrp"]."' ORDER BY GovId DESC LIMIT 1000"; 
-           $query = mysqli_query($connect, $sql);  
+
+          $perPage = 10;
+          $sql = "SELECT * FROM governments WHERE webgroup = '".$_POST["webgrp"]."'"; 
+$page = 1;
+if(!empty($_GET["page"])) {
+	$page = $_GET["page"];
+}
+$start = ($page-1)*$perPage;
+if($start < 0) $start = 0;
+$query =  $sql . " limit " . $start . "," . $perPage; 
+
+
+ $result=mysqli_query($con,$sql);
+ $rowcount=mysqli_num_rows($result);
+
+$resultset =  mysqli_query($connect, $query);
+
+if(empty($_GET["total_record"])) {
+	$_GET["total_record"] = mysqli_num_rows($resultset); 
+}
+       
            while($row_gov = mysqli_fetch_array($query)) {  
            $govid = $row_gov["GovId"];  
         
@@ -23,7 +42,7 @@
             $query_kty = mysqli_query($connect, $sql);  
             while($row_kty = mysqli_fetch_array($query_kty)){
 
-           $sql = "SELECT * FROM addresses WHERE GovId = '".$govid."'";
+           $sql = "SELECT * FROM addresses WHERE GovId = '".$govid."' ORDER BY PublicBodyNameFormal LIMIT 100";
            $result = mysqli_query($connect, $sql);  
            while($row = mysqli_fetch_array($result)) {
 
