@@ -22,7 +22,7 @@ $rowcount = mysqli_num_rows($result);
 
               <!-- First row -->
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Cities, Towns, Villages</a>
+                <a href="municipalities.php" class="btn btn-md">Cities, Towns, Villages</a>
             </div>
 
             <div class="col-sm-3">
@@ -30,35 +30,33 @@ $rowcount = mysqli_num_rows($result);
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Townships</a>
+                <a href="townships.php" class="btn btn-md">Townships</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">School Districts</a>
+                <a href="school-districts.php" class="btn btn-md">School Districts</a>
             </div>
 
             <!-- Second row -->
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Fire Protection</a>
+                <a href="fire-districts.php" class="btn btn-md">Fire Protection</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Parks</a>
+                <a href="park-districts.php" class="btn btn-md">Parks</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Forest and Conservation</a>
+                <a href="forest-and-conservation-districts.php" class="btn btn-md">Forest and Conservation</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Community Colleges</a>
+                <a href="community-colleges.php" class="btn btn-md">Community Colleges</a>
             </div>
-
-
 
               <!-- Third row -->
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Libraries and Museums</a>
+                <a href="library-districts.php" class="btn btn-md">Libraries and Museums</a>
             </div>
 
             <div class="col-sm-3">
@@ -66,62 +64,58 @@ $rowcount = mysqli_num_rows($result);
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Health</a>
+                <a href="hospitals.php" class="btn btn-md">Health</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Cemetries</a>
+                <a href="cemeteries.php" class="btn btn-md">Cemetries</a>
             </div>
 
             <!-- Fourth row -->
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Transport</a>
+                <a href="transport.php" class="btn btn-md">Transport</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Rural Roads</a>
+                <a href="roads.php" class="btn btn-md">Rural Roads</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Street Lighting</a>
+                <a href="multi-townships.php" class="btn btn-md">Multi Townships</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Drainage</a>
+                <a href="drainage-districts.php" class="btn btn-md">Drainage</a>
             </div>
 
             <!-- Fifth row -->
             <div class="col-sm-3">
-                <a href="water.php" class="btn btn-md">Water</a>
+                <a href="water-districts.php" class="btn btn-md">Water</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Sewage</a>
+                <a href="sanitary-districts.php" class="btn btn-md">Sewerage</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Garbage</a>
+                <a href="election-division.php" class="btn btn-md">Election</a>
             </div>
 
-            <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Mosquito</a>
-            </div>
-
-            <!-- Sixth row -->
             <div class="col-sm-3">
                 <a href="convention-ctrs.php" class="btn btn-md">Convention Centers</a>
             </div>
 
+            <!-- Sixth row -->
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Public Buildings</a>
+                <a href="public-buildings.php" class="btn btn-md">Public Buildings</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Planning</a>
+                <a href="planning.php" class="btn btn-md">Planning</a>
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Special Utilities</a>
+                <a href="utilities.php" class="btn btn-md">Special Utilities</a>
             </div>
 
         </div>
