@@ -60,7 +60,7 @@ $rowcount = mysqli_num_rows($result);
             </div>
 
             <div class="col-sm-3">
-                <a href="#" class="btn btn-md">Housing</a>
+                <a href="housing.php" class="btn btn-md">Housing</a>
             </div>
 
             <div class="col-sm-3">

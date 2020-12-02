@@ -7,6 +7,7 @@ if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
    }
 
+   
 define('TIMEZONE', 'America/Chicago');
 date_default_timezone_set(TIMEZONE);
 

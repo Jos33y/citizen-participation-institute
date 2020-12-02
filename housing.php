@@ -1,29 +1,26 @@
 <?php
-$title = "Fire Districts";
+$title = "Utilities Association";
 include 'include/dbcon.php';
 include 'include/header.php';
 
-$sql = "SELECT * FROM governments WHERE webgroup = 'Fire'";
+$sql = "SELECT * FROM governments WHERE webgroup = 'Housing'";
 $result = mysqli_query($con, $sql);
 $rowcount = mysqli_num_rows($result);
 ?>
 
 <!--Body of page-->
 <div class="container record-req">
-    <h3 class="records-head text-left">The <?php echo $rowcount; ?> Fire Protection Districts in Illinois
+    <h3 class="records-head text-left">The <?php echo $rowcount; ?> Housing or Home Equity Authorities in Illinois
     </h3>
     <div class="text-center">
         <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on Oct. 26,
                 2015</span>
         </p>
         <p><a href="#" class="changes" style="text-decoration:none;">Click here to report changes or errors​.</a></p>
-
-        <p class="texts">​This is not a list of all fire-fighting agencies in Illinois. Many others are departments of a
-            <a href="#">municipal government.</a> This is a list of only those operated by their own separate governments, 
-            independent of any city, village, or town.</p>
     </div>
-    <p class="texts" style="font-weight:700;">In sequence by the headquarters city:</p>
+    <p class="texts" style="font-weight:700;">​​In sequence by the headquarters city:</p>
 </div>
+
 <!-- Table -->
 <div class="container">
     <div class="table">
@@ -46,7 +43,7 @@ if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
     $page_no = 1;
 }
 
-$total_records_per_page = 100;
+$total_records_per_page = 50;
 
 $offset = ($page_no - 1) * $total_records_per_page;
 $previous_page = $page_no - 1;
@@ -55,14 +52,14 @@ $adjacents = "2";
 
 $result_count = mysqli_query(
     $con,
-    "SELECT COUNT(*) As total_records FROM governments WHERE webgroup = 'Fire'"
+    "SELECT COUNT(*) As total_records FROM governments WHERE webgroup = 'Housing'"
 );
 $total_records = mysqli_fetch_array($result_count);
 $total_records = $total_records['total_records'];
 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 $second_last = $total_no_of_pages - 1; // total pages minus 1
 
-$sql = "SELECT * FROM governments WHERE webgroup = 'Fire' LIMIT $offset, $total_records_per_page";
+$sql = "SELECT * FROM governments WHERE webgroup = 'Housing' LIMIT $offset, $total_records_per_page";
 $query = mysqli_query($con, $sql);
 while ($row_gov = mysqli_fetch_array($query)) {
     $govid = $row_gov["GovId"];
@@ -98,15 +95,11 @@ while ($row_gov = mysqli_fetch_array($query)) {
        <td><p><span>' . $row["FoiaEmail"] . '</span></p></td>
        <td><p><span>' . $row["FoiaPhone"] . '</span></p></td>
        </tr>';
-
             }
-
         }
     }
-
 }
 echo $output;
-
 
 mysqli_close($con);
 ?>

@@ -36,6 +36,7 @@
     <script src="https://kit.fontawesome.com/eedc5762fd.js"></script>
 
     <!--  CSS File -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/styles.css" rel="stylesheet">
 
 </head>

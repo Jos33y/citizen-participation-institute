@@ -13,7 +13,8 @@ $rowcount = mysqli_num_rows($result);
     <h3 class="records-head text-left">The <?php echo $rowcount; ?> Counties of Illinois.
     </h3>
     <div class="text-center">
-        <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on Oct. 26, 2015</span>
+        <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on Oct. 26,
+                2015</span>
         </p>
         <p><a href="#" class="changes" style="text-decoration:none;">Click here to report changes or errors​</a></p>
     </div>
@@ -31,8 +32,32 @@ $rowcount = mysqli_num_rows($result);
                     <th width="25%">Office Phone</th>
                 </tr>
             </thead>
+            <tbody>
 <?php
-$sql = "SELECT * FROM governments WHERE webgroup = 'County' LIMIT 50";
+
+if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
+    $page_no = $_GET['page_no'];
+} else {
+    $page_no = 1;
+}
+
+$total_records_per_page = 51;
+
+$offset = ($page_no - 1) * $total_records_per_page;
+$previous_page = $page_no - 1;
+$next_page = $page_no + 1;
+$adjacents = "2";
+
+$result_count = mysqli_query(
+    $con,
+    "SELECT COUNT(*) As total_records FROM governments WHERE webgroup = 'County'"
+);
+$total_records = mysqli_fetch_array($result_count);
+$total_records = $total_records['total_records'];
+$total_no_of_pages = ceil($total_records / $total_records_per_page);
+$second_last = $total_no_of_pages - 1; // total pages minus 1
+
+$sql = "SELECT * FROM governments WHERE webgroup = 'County' LIMIT $offset, $total_records_per_page";
 $query = mysqli_query($con, $sql);
 while ($row_gov = mysqli_fetch_array($query)) {
     $govid = $row_gov["GovId"];
@@ -75,4 +100,87 @@ while ($row_gov = mysqli_fetch_array($query)) {
 
 }
 echo $output;
+
+mysqli_close($con);
 ?>
+            </tbody>
+        </table>
+    </div>
+    <div style='padding: 10px 20px 0px; border-top: dotted 1px #CCC;'>
+        <strong>Page <?php echo $page_no . " of " . $total_no_of_pages; ?></strong>
+    </div>
+    <hr>
+    <div class="text-center">
+        <ul class="pagination">
+            <?php // if($page_no > 1){ echo "<li><a href='?page_no=1'>First Page</a></li>"; } ?>
+
+            <li <?php if ($page_no <= 1) {echo "class='disabled'";}?>>
+                <a <?php if ($page_no > 1) {echo "href='?page_no=$previous_page'";}?>>Previous</a>
+            </li>
+            <?php
+if ($total_no_of_pages <= 10) {
+    for ($counter = 1; $counter <= $total_no_of_pages; $counter++) {
+        if ($counter == $page_no) {
+            echo "<li class='active'><a>$counter</a></li>";
+        } else {
+            echo "<li><a href='?page_no=$counter'>$counter</a></li>";
+        }
+    }
+} elseif ($total_no_of_pages > 10) {
+
+    if ($page_no <= 4) {
+        for ($counter = 1; $counter < 8; $counter++) {
+            if ($counter == $page_no) {
+                echo "<li class='active'><a>$counter</a></li>";
+            } else {
+                echo "<li><a href='?page_no=$counter'>$counter</a></li>";
+            }
+        }
+        echo "<li><a>...</a></li>";
+        echo "<li><a href='?page_no=$second_last'>$second_last</a></li>";
+        echo "<li><a href='?page_no=$total_no_of_pages'>$total_no_of_pages</a></li>";
+    } elseif ($page_no > 4 && $page_no < $total_no_of_pages - 4) {
+        echo "<li><a href='?page_no=1'>1</a></li>";
+        echo "<li><a href='?page_no=2'>2</a></li>";
+        echo "<li><a>...</a></li>";
+        for ($counter = $page_no - $adjacents; $counter <= $page_no + $adjacents; $counter++) {
+            if ($counter == $page_no) {
+                echo "<li class='active'><a>$counter</a></li>";
+            } else {
+                echo "<li><a href='?page_no=$counter'>$counter</a></li>";
+            }
+        }
+        echo "<li><a>...</a></li>";
+        echo "<li><a href='?page_no=$second_last'>$second_last</a></li>";
+        echo "<li><a href='?page_no=$total_no_of_pages'>$total_no_of_pages</a></li>";
+    } else {
+        echo "<li><a href='?page_no=1'>1</a></li>";
+        echo "<li><a href='?page_no=2'>2</a></li>";
+        echo "<li><a>...</a></li>";
+
+        for ($counter = $total_no_of_pages - 6; $counter <= $total_no_of_pages; $counter++) {
+            if ($counter == $page_no) {
+                echo "<li class='active'><a>$counter</a></li>";
+            } else {
+                echo "<li><a href='?page_no=$counter'>$counter</a></li>";
+            }
+        }
+    }
+}
+?>
+
+            <li <?php if ($page_no >= $total_no_of_pages) {echo "class='disabled'";}?>>
+                <a <?php if ($page_no < $total_no_of_pages) {echo "href='?page_no=$next_page'";}?>>Next</a>
+            </li>
+            <?php if ($page_no < $total_no_of_pages) {
+    echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";
+}?>
+        </ul>
+    </div>
+</div>
+
+<?php include 'include/footer.php';?>
+
+</body>
+
+</html>

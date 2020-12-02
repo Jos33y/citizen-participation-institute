@@ -33,7 +33,7 @@ $rowcount = mysqli_num_rows($result);
                 </tr>
             </thead>
 <?php
-$sql = "SELECT * FROM governments WHERE webgroup = 'Forest' LIMIT 50";
+$sql = "SELECT * FROM governments WHERE webgroup = 'Forest'";
 $query = mysqli_query($con, $sql);
 while ($row_gov = mysqli_fetch_array($query)) {
     $govid = $row_gov["GovId"];
@@ -77,4 +77,17 @@ while ($row_gov = mysqli_fetch_array($query)) {
     
 }
 echo $output;
+
+mysqli_close($con);
 ?>
+
+</tbody>
+        </table>
+    </div>
+</div>
+
+<?php include 'include/footer.php';?>
+
+</body>
+
+</html>
