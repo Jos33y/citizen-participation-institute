@@ -319,6 +319,39 @@ header {
 
 }
 
+.record-req a{
+    color: #df5f04;
+}
+ 
+.record-req .date{
+    color: #5040ae;
+}
+.record-req{
+    margin: 5% 15% 0;
+    font-size: 16px;
+}
+.record-req .citizen{
+    color: #666666;
+    float: left;
+}
+.record-req h6{
+    margin-top: 5%;
+}
+.record-req .texts{
+   font-size:16px; 
+   text-align: justify;
+}
+.unit-og{
+    margin-bottom: 5%;
+}
+
+.unit-og .btn {
+    background-color: #df5f04;
+    color: #fff;
+    padding: 8px 25px;
+    margin-top: 10%;
+}
+
 a.link {
     color: #df5f04;
     text-decoration: none;

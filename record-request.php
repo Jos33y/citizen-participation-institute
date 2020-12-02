@@ -1,15 +1,14 @@
 <?php
 $title = "Record Request";
- include('include/dbcon.php');
- include('include/header.php');
+include 'include/dbcon.php';
+include 'include/header.php';
 
- $sql = "SELECT DISTINCT webgroup FROM governments ORDER BY webgroup ASC";
- $query = mysqli_query($con , $sql);
+$sql = "SELECT DISTINCT webgroup FROM governments ORDER BY webgroup ASC";
+$query = mysqli_query($con, $sql);
 
- $sql = "SELECT * FROM addresses";
- $result=mysqli_query($con,$sql);
- $rowcount=mysqli_num_rows($result);
-
+$sql = "SELECT * FROM addresses";
+$result = mysqli_query($con, $sql);
+$rowcount = mysqli_num_rows($result);
 
 ?>
 <!--Body of page-->
@@ -18,72 +17,119 @@ $title = "Record Request";
         in Illinois
     </h3>
 
-    <div class="selection">
+    <div class="unit-og">
+        <div class="row text-center">
 
-        <div class="form-group">
-            <select name="uog" id="UOG" class="form-control">
-                <!--form-control Begin -->
-                <option selected disabled> Select a Unit of Government</option>
-                <?php
-                                    while ($row=mysqli_fetch_array($query)){
+              <!-- First row -->
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Cities, Towns, Villages</a>
+            </div>
 
-                                        $webgrp = $row['webgroup'];
-    
-                                        echo "
-                                        <option value='$webgrp'>$webgrp</option>
-                                        ";
-                                    }
+            <div class="col-sm-3">
+                <a href="counties.php" class="btn btn-md">Counties</a>
+            </div>
 
-                                    if($webgrp == 'County'){
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Townships</a>
+            </div>
 
-                                        $webtitles = "The 28 Cemetery Maintenance Districts in Illinois";
-                                    }
-                                    else{
-                                        $webtitles ="school down";
-                                    }
-                                    ?>
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">School Districts</a>
+            </div>
 
-            </select>
-            <!--form-control Finish -->
+            <!-- Second row -->
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Fire Protection</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Parks</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Forest and Conservation</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Community Colleges</a>
+            </div>
+
+
+
+              <!-- Third row -->
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Libraries and Museums</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Housing</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Health</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Cemetries</a>
+            </div>
+
+            <!-- Fourth row -->
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Transport</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Rural Roads</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Street Lighting</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Drainage</a>
+            </div>
+
+            <!-- Fifth row -->
+            <div class="col-sm-3">
+                <a href="water.php" class="btn btn-md">Water</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Sewage</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Garbage</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Mosquito</a>
+            </div>
+
+            <!-- Sixth row -->
+            <div class="col-sm-3">
+                <a href="convention-ctrs.php" class="btn btn-md">Convention Centers</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Public Buildings</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Planning</a>
+            </div>
+
+            <div class="col-sm-3">
+                <a href="#" class="btn btn-md">Special Utilities</a>
+            </div>
+
         </div>
-
     </div>
-
-   <!-- <div class="container text-center">
-<h3 class="records-head"> Shop name <?php echo $webtitles; ?> </h3>
-</div> -->
-
-    <div class="container">
-        <div class="table">
-            <table class="table table-bordered text-center">
-                <thead style="background-color: #5040ae; color:#fff;">
-                    <tr>
-                        <!--the table heading -->
-                        <th width="40%">Public Body Name</th>
-                        <th width="35%">FOIA Address</th>
-                        <th width="10%"><span style="font-weight:normal">&#8203;</span><strong>FOIA Email</strong></th>
-                        <th width="18%">Office Phone</th>
-                    </tr>
-                </thead>
-
-                <!-- Image loader -->
-<div id='loader' style='display: none;' class="text-center" >
-  <img src="images/loading.gif" width="50px" height="50px" style="margin-bottom:2%;" >
 </div>
-<!-- Image loader -->
-                <tbody id="display">
-                <?php include('load_data.php'); ?>
-                </tbody>
 
-            </table>
-        </div>
-    </div>
-
-    <div id="loader" style="text-align:center;"><img src="images/loading.gif" /></div> 
-
-
+<div class="container">
     <hr>
-
     <h3 class="records-head"> How to make a Freedom of Information Request</h3>
     <br>
     <div class="row">
@@ -107,13 +153,11 @@ $title = "Record Request";
                 or denying the records, the response might be that they need more time to locate the records in
                 storage but that they will be made available on a date certain.
             </p>
-
         </div>
         <div class="col-md-6">
 
             <h5 style="font-weight: 700; font-style: italic;"> Here is an example of a request:</h5>
             <br>
-
             <p>
                 "This is a request pursuant to the Freedom of Information Act for a copy of the original employment
                 contract of William Breuder, along with all subsequent amendments, extensions, novations, or other
@@ -130,9 +174,7 @@ $title = "Record Request";
 
             <p style="font-weight: 700;">Your request can be either emailed or postal mailed. Buttons above give
                 those addresses of many public bodies.</p>
-
         </div>
-
     </div>
 </div>
 
@@ -147,67 +189,65 @@ $title = "Record Request";
 
 </html>
 <script>
-$(document).ready(function(){ 
-    $('#UOG').change(function () {
-            var webgrp = $(this).val();
-	$(window).scroll(function(){
-		if ($(window).scrollTop() == $(document).height() - $(window).height()){
-			if($(".page_number:last").val() <= $(".total_record").val()) {
-				var pagenum = parseInt($(".page_number:last").val()) + 1;
-				loadRecords('load_data.php?page='+pagenum);
-			}
-		}
-	});	
-});
-});
-
-function loadRecords(url) {
-	$.ajax({
-        url: url,
-        type: "GET",
-        data: {
-                    webgrp: webgrp,
-                    total_record:$("#total_record").val()
-                },
-		beforeSend: function(){
-			$('#loader').show();
-		},
-		
-		success: function(data){			
-			$("#display").html(data);
-        },
-        complete: function(){
-			$('#loader').hide();			
-		},
-		error: function(){
-
-        }
-
-}
-
-
-
-   /* $(document).ready(function () {
+    $(document).ready(function () {
         $('#UOG').change(function () {
             var webgrp = $(this).val();
-            $.ajax({
-                url: "load_data.php",
-                method: "POST",
-                data: {
-                    webgrp: webgrp
-                },
-                beforeSend: function () {
-                    // Show image container
-                    $("#loader").show();
-                },
-                success: function (data) {
-                    $('#display').html(data);
-                },
-                complete: function (data) {
-                    // Hide image container
-                    $("#loader").hide();
+            $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    if ($(".page_number:last").val() <= $(".total_record").val()) {
+                        var pagenum = parseInt($(".page_number:last").val()) + 1;
+                        loadRecords('load_data.php?page=' + pagenum);
+                    }
                 }
             });
         });
-    }); */
+    });
+
+    function loadRecords(url) {
+        $.ajax({
+            url: url,
+            type: "GET",
+            data: {
+                webgrp: webgrp,
+                total_record: $("#total_record").val()
+            },
+            beforeSend: function () {
+                $('#loader').show();
+            },
+
+            success: function (data) {
+                $("#display").html(data);
+            },
+            complete: function () {
+                $('#loader').hide();
+            },
+            error: function () {
+
+            }
+
+        });
+        /* $(document).ready(function () {
+             $('#UOG').change(function () {
+                 var webgrp = $(this).val();
+                 $.ajax({
+                     url: "load_data.php",
+                     method: "POST",
+                     data: {
+                         webgrp: webgrp
+                     },
+                     beforeSend: function () {
+                         // Show image container
+                         $("#loader").show();
+                     },
+                     success: function (data) {
+                         $('#display').html(data);
+                     },
+                     complete: function (data) {
+                         // Hide image container
+                         $("#loader").hide();
+                     }
+                 });
+             });
+         }); */
+    }
 </script>

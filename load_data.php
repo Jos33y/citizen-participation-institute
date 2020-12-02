@@ -6,7 +6,6 @@
  $output = '';  
  if(isset($_GET["webgrp"]))  
  {  
-
       if($_GET["webgrp"] != '')  
       {  
 
@@ -48,7 +47,6 @@ if(empty($_GET["total_record"])) {
 
             $website =$row["WebsiteURL"];
 
-
             if($website == ""){
               $pb =   $row["PublicBodyNameFormal"];
 
@@ -76,12 +74,6 @@ if(empty($_GET["total_record"])) {
       }
       
       
-
-
-
-
-
-
       else  
       {  
            $output .= "";  
