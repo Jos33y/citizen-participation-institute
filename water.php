@@ -68,9 +68,8 @@ while ($row_gov = mysqli_fetch_array($query)) {
 
                 $output .=
                     '<tr>
-       <td><p><span>' . $pb . '</p></td>
-       <td><p><span>' . $pb . '<br>
-       <small>' . $row_kty["namesimple"] . '</small></span></p></td>
+                <td><p><span>' . $pb . '<br>
+                <small>' . $row_kty["namesimple"] . '</small></span></p></td>
        <td><p><span>' . $row["FoiaPhysicalAddress"] . '<br />&#8203;
        <strong>' . $row["FoiaMailingCity"] . '</strong>' . ' ' . $row["FoiaState"] . ' ' . $row["FoiaMailingZip"] . '</span></p></td>
        <td><p><span>' . $row["FoiaEmail"] . '</span></p></td>
