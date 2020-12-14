@@ -6,7 +6,7 @@ include 'include/header.php';
 $sql = "SELECT DISTINCT webgroup FROM governments ORDER BY webgroup ASC";
 $query = mysqli_query($con, $sql);
 
-$sql = "SELECT * FROM addresses";
+$sql = "SELECT PublicBodyNameFormal FROM addresses";
 $result = mysqli_query($con, $sql);
 $rowcount = mysqli_num_rows($result);
 

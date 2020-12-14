@@ -6,6 +6,21 @@ include 'include/header.php';
 $sql = "SELECT * FROM governments WHERE webgroup = 'Health'";
 $result = mysqli_query($con, $sql);
 $rowcount = mysqli_num_rows($result);
+
+$sql = "SELECT GovId FROM governments WHERE webgroup = 'Health'";
+$query = mysqli_query($con, $sql);
+while ($row_gov = mysqli_fetch_array($query)) {
+    $govid = $row_gov["GovId"];
+
+}
+$sql = "SELECT timestamp FROM addresses WHERE GovId = '" . $govid . "'";
+$result = mysqli_query($con, $sql);
+$row = mysqli_fetch_array($result);
+
+$date =$row["timestamp"];
+
+$newDate = date("M j, Y", strtotime($date));  
+ 
 ?>
 
 <!--Body of page-->
@@ -13,8 +28,7 @@ $rowcount = mysqli_num_rows($result);
     <h3 class="records-head text-left">The <?php echo $rowcount; ?> Hospital or Health Districts in Illinois
     </h3>
     <div class="text-center">
-        <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on Oct. 26,
-                2015</span>
+        <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on <?php echo $newDate; ?></span>
         </p>
         <p><a href="#" class="changes" style="text-decoration:none;">Click here to report changes or errors​</a></p>
         <p class="texts">This is not a list of all public hospitals in Illinois. This is a list separate governments, independent of any
@@ -37,17 +51,13 @@ $rowcount = mysqli_num_rows($result);
             </thead>
             <tbody>
             <?php
-$sql = "SELECT * FROM governments WHERE webgroup = 'Health'";
+$sql = "SELECT GovId, ElectionAuthority FROM governments WHERE webgroup = 'Health'";
 $query = mysqli_query($con, $sql);
 while ($row_gov = mysqli_fetch_array($query)) {
     $govid = $row_gov["GovId"];
+    $kty_nbr = $row_gov["ElectionAuthority"];
 
-    $sql = "SELECT * FROM governments WHERE GovId = '" . $govid . "'";
-    $query_ktynbr = mysqli_query($con, $sql);
-    while ($row_ktynbr = mysqli_fetch_array($query_ktynbr)) {
-        $kty_nbr = $row_ktynbr["ElectionAuthority"];
-
-        $sql = "SELECT * FROM kountynbrs WHERE eiauthority = '" . $kty_nbr . "'";
+        $sql = "SELECT namesimple FROM kountynbrs WHERE eiauthority = '" . $kty_nbr . "'";
         $query_kty = mysqli_query($con, $sql);
         while ($row_kty = mysqli_fetch_array($query_kty)) {
 
@@ -79,7 +89,6 @@ while ($row_gov = mysqli_fetch_array($query)) {
         }
     }
 
-}
 echo $output;
 
 mysqli_close($con);
