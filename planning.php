@@ -17,10 +17,10 @@ $sql = "SELECT timestamp FROM addresses WHERE GovId = '" . $govid . "'";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($result);
 
-$date =$row["timestamp"];
+$date = $row["timestamp"];
 
-$newDate = date("M j, Y", strtotime($date));  
- 
+$newDate = date("M j, Y", strtotime($date));
+
 ?>
 
 <!--Body of page-->

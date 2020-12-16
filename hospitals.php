@@ -17,10 +17,10 @@ $sql = "SELECT timestamp FROM addresses WHERE GovId = '" . $govid . "'";
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_array($result);
 
-$date =$row["timestamp"];
+$date = $row["timestamp"];
 
-$newDate = date("M j, Y", strtotime($date));  
- 
+$newDate = date("M j, Y", strtotime($date));
+
 ?>
 
 <!--Body of page-->
@@ -57,25 +57,25 @@ while ($row_gov = mysqli_fetch_array($query)) {
     $govid = $row_gov["GovId"];
     $kty_nbr = $row_gov["ElectionAuthority"];
 
-        $sql = "SELECT namesimple FROM kountynbrs WHERE eiauthority = '" . $kty_nbr . "'";
-        $query_kty = mysqli_query($con, $sql);
-        while ($row_kty = mysqli_fetch_array($query_kty)) {
+    $sql = "SELECT namesimple FROM kountynbrs WHERE eiauthority = '" . $kty_nbr . "'";
+    $query_kty = mysqli_query($con, $sql);
+    while ($row_kty = mysqli_fetch_array($query_kty)) {
 
-            $sql = "SELECT * FROM addresses WHERE GovId = '" . $govid . "'  ORDER BY PublicBodyNameFormal DESC";
-            $result = mysqli_query($con, $sql);
-            while ($row = mysqli_fetch_array($result)) {
+        $sql = "SELECT * FROM addresses WHERE GovId = '" . $govid . "'  ORDER BY PublicBodyNameFormal DESC";
+        $result = mysqli_query($con, $sql);
+        while ($row = mysqli_fetch_array($result)) {
 
-                $website = $row["WebsiteURL"];
+            $website = $row["WebsiteURL"];
 
-                if ($website == "") {
-                    $pb = $row["PublicBodyNameFormal"];
+            if ($website == "") {
+                $pb = $row["PublicBodyNameFormal"];
 
-                } else {
-                    $pb = '<a href="//' . $row["WebsiteURL"] . '" class="link" target="_blank">' . $row["PublicBodyNameFormal"] . '</a>';
-                }
+            } else {
+                $pb = '<a href="//' . $row["WebsiteURL"] . '" class="link" target="_blank">' . $row["PublicBodyNameFormal"] . '</a>';
+            }
 
-                $output .=
-                    '<tr>
+            $output .=
+                '<tr>
        <td><p><span>' . $pb . '<br>
        <small>' . $row_kty["namesimple"] . '</small></span></p></td>
        <td><p><span>' . $row["FoiaPhysicalAddress"] . '<br />&#8203;
@@ -84,10 +84,10 @@ while ($row_gov = mysqli_fetch_array($query)) {
        <td><p><span>' . $row["FoiaPhone"] . '</span></p></td>
        </tr>';
 
-            }
-
         }
+
     }
+}
 
 echo $output;
 
