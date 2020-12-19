@@ -25,10 +25,15 @@ $newDate = date("M j, Y", strtotime($date));
 
 <!--Body of page-->
 <div class="container record-req">
+   <!-- <form method="POST" action="export.php">
+    <input type="submit" name="export" value="CSV Export" class="btn btn-sm btn-primary">
+
+    </form> -->
     <h3 class="records-head text-left">The <?php echo $rowcount; ?> Municipalities in Illinois
     </h3>
     <div class="text-center">
-        <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on <?php echo $newDate; ?></span>
+        <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on
+                <?php echo $newDate; ?></span>
         </p>
         <p><a href="#" class="changes" style="text-decoration:none;">Click here to report changes or errors​.</a></p>
     </div>
@@ -45,9 +50,9 @@ $newDate = date("M j, Y", strtotime($date));
                     <th width="25%"><span style="font-weight:normal">&#8203;</span><strong>FOIA Email</strong></th>
                     <th width="25%">Office Phone</th>
                 </tr>
-                </thead>
-                <tbody>
-<?php
+            </thead>
+            <tbody>
+                <?php
 
 if (isset($_GET['page_no']) && $_GET['page_no'] != "") {
     $page_no = $_GET['page_no'];
@@ -113,7 +118,7 @@ echo $output;
 mysqli_close($con);
 ?>
 
-</tbody>
+            </tbody>
         </table>
     </div>
     <div style='padding: 10px 20px 0px; border-top: dotted 1px #CCC;'>
