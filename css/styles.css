@@ -335,6 +335,7 @@ header {
 .record-req .citizen{
     color: #666666;
     float: left;
+    font-style: italic;
 }
 .record-req h6{
     margin-top: 5%;
@@ -358,6 +359,15 @@ header {
 a.link {
     color: #df5f04;
     text-decoration: none;
+}
+.changes{
+    margin-right: 15%;
+}
+.table th{
+    text-align: center;
+}
+.table td{
+    color: #666666;
 }
 
 

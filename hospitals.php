@@ -30,10 +30,11 @@ $newDate = date("M j, Y", strtotime($date));
     <div class="text-center">
         <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on <?php echo $newDate; ?></span>
         </p>
-        <p><a href="#" class="changes" style="text-decoration:none;">Click here to report changes or errors​</a></p>
+        <p><a href="contact.php" class="changes" style="text-decoration:none;">Click here to report changes or errors​</a></p>
         <p class="texts">This is not a list of all public hospitals in Illinois. This is a list separate governments, independent of any
         city, village, town, or township, the operate hospitals or provide services for public health.</p>
     </div>
+    <br>
     <p class="text-left">In sequence by the headquarters city:</p>
 </div>
 <!-- Table -->
@@ -51,30 +52,33 @@ $newDate = date("M j, Y", strtotime($date));
             </thead>
             <tbody>
             <?php
-$sql = "SELECT GovId, ElectionAuthority FROM governments WHERE webgroup = 'Health'";
+$sql = "SELECT *
+FROM governments
+INNER JOIN addresses
+ON governments.GovId = addresses.GovId
+WHERE governments.webgroup = 'Health'
+ORDER BY addresses.HQphysicalCity ASC";
+
 $query = mysqli_query($con, $sql);
-while ($row_gov = mysqli_fetch_array($query)) {
-    $govid = $row_gov["GovId"];
-    $kty_nbr = $row_gov["ElectionAuthority"];
+
+while ($row = mysqli_fetch_array($query)) {
+    $govid = $row["GovId"];
+    $kty_nbr = $row["ElectionAuthority"];
+
+    $website = $row["WebsiteURL"];
+
+    if ($website == "") {
+        $pb = $row["PublicBodyNameFormal"];
+
+    } else {
+        $pb = '<a href="//' . $row["WebsiteURL"] . '" class="link" target="_blank">' . $row["PublicBodyNameFormal"] . '</a>';
+    }
 
     $sql = "SELECT namesimple FROM kountynbrs WHERE eiauthority = '" . $kty_nbr . "'";
     $query_kty = mysqli_query($con, $sql);
     while ($row_kty = mysqli_fetch_array($query_kty)) {
 
-        $sql = "SELECT * FROM addresses WHERE GovId = '" . $govid . "'  ORDER BY PublicBodyNameFormal DESC";
-        $result = mysqli_query($con, $sql);
-        while ($row = mysqli_fetch_array($result)) {
-
-            $website = $row["WebsiteURL"];
-
-            if ($website == "") {
-                $pb = $row["PublicBodyNameFormal"];
-
-            } else {
-                $pb = '<a href="//' . $row["WebsiteURL"] . '" class="link" target="_blank">' . $row["PublicBodyNameFormal"] . '</a>';
-            }
-
-            $output .=
+        echo
                 '<tr>
        <td><p><span>' . $pb . '<br>
        <small>' . $row_kty["namesimple"] . '</small></span></p></td>
@@ -87,10 +91,6 @@ while ($row_gov = mysqli_fetch_array($query)) {
         }
 
     }
-}
-
-echo $output;
-
 mysqli_close($con);
 ?>
 

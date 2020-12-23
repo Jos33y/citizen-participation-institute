@@ -27,12 +27,15 @@ $newDate = date("M j, Y", strtotime($date));
 <div class="container record-req">
     <h3 class="records-head text-left">The <?php echo $rowcount; ?> Drainage Districts in Illinois
     </h3>
+    <p>Units of government created by <a href="http://ilga.gov/legislation/ilcs/ilcs5.asp?ActID=869&ChapterID=15"
+            style="text-decoration:none;">70 ILCS 605/3</a></p>
     <div class="text-center">
         <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on <?php echo $newDate; ?></span>
         </p>
         <p><a href="#" class="changes" style="text-decoration:none;">Click here to report changes or errors​.</a></p>
     </div>
-    <p class="texts" style="font-weight:700;">In sequence by county:​</p>
+    <br>
+    <p class="texts">In sequence by county:​</p>
 </div>
 <!-- Table -->
 <div class="container">
@@ -72,31 +75,35 @@ $total_records = $total_records['total_records'];
 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 $second_last = $total_no_of_pages - 1; // total pages minus 1
 
-$sql = "SELECT GovId, ElectionAuthority FROM governments WHERE webgroup = 'WaterMgt' ORDER BY FullSpan ASC LIMIT $offset, $total_records_per_page";
+$sql = "SELECT *
+FROM governments
+INNER JOIN addresses
+ON governments.GovId = addresses.GovId
+WHERE governments.webgroup = 'WaterMgt'
+ORDER BY governments.FullSpan ASC
+LIMIT $offset, $total_records_per_page";
+
 $query = mysqli_query($con, $sql);
-while ($row_gov = mysqli_fetch_array($query)) {
-    $govid = $row_gov["GovId"];
-    $kty_nbr = $row_gov["ElectionAuthority"];
+
+while ($row = mysqli_fetch_array($query)) {
+    $govid = $row["GovId"];
+    $kty_nbr = $row["ElectionAuthority"];
+
+    $website = $row["WebsiteURL"];
+
+    if ($website == "") {
+        $pb = $row["PublicBodyNameFormal"];
+
+    } else {
+        $pb = '<a href="//' . $row["WebsiteURL"] . '" class="link" target="_blank">' . $row["PublicBodyNameFormal"] . '</a>';
+    }
 
     $sql = "SELECT namesimple FROM kountynbrs WHERE eiauthority = '" . $kty_nbr . "'";
     $query_kty = mysqli_query($con, $sql);
     while ($row_kty = mysqli_fetch_array($query_kty)) {
 
-        $sql = "SELECT * FROM addresses WHERE GovId = '" . $govid . "'  ORDER BY PublicBodyNameFormal DESC";
-        $result = mysqli_query($con, $sql);
-        while ($row = mysqli_fetch_array($result)) {
-
-            $website = $row["WebsiteURL"];
-
-            if ($website == "") {
-                $pb = $row["PublicBodyNameFormal"];
-
-            } else {
-                $pb = '<a href="//' . $row["WebsiteURL"] . '" class="link" target="_blank">' . $row["PublicBodyNameFormal"] . '</a>';
-            }
-
-            $output .=
-                '<tr>
+        echo
+            '<tr>
                 <td><p><span>' . $pb . '<br>
                 <small>' . $row_kty["namesimple"] . '</small></span></p></td>
        <td><p><span>' . $row["FoiaPhysicalAddress"] . '<br />&#8203;
@@ -105,11 +112,9 @@ while ($row_gov = mysqli_fetch_array($query)) {
        <td><p><span>' . $row["FoiaPhone"] . '</span></p></td>
        </tr>';
 
-        }
-
     }
+
 }
-echo $output;
 
 mysqli_close($con);
 ?>

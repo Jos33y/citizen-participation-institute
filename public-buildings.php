@@ -7,7 +7,7 @@ $sql = "SELECT * FROM governments WHERE webgroup = 'Building'";
 $result = mysqli_query($con, $sql);
 $rowcount = mysqli_num_rows($result);
 
-$sql = "SELECT GovId FROM governments WHERE webgroup = 'Building' ORDER BY GovId DESC";
+$sql = "SELECT GovId FROM governments WHERE webgroup = 'Planning' ORDER BY GovId DESC";
 $query = mysqli_query($con, $sql);
 while ($row_gov = mysqli_fetch_array($query)) {
     $govid = $row_gov["GovId"];
@@ -27,12 +27,15 @@ $newDate = date("M j, Y", strtotime($date));
 <div class="container record-req">
     <h3 class="records-head text-left">The <?php echo $rowcount; ?> Public Building Commissions in Illinois
     </h3>
+    <p class="date">Units of government created by <a href="http://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=683&ChapterID=11"
+            style="text-decoration:none;"> 50 ILCS 20.</a></p>
     <div class="text-center">
         <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on <?php echo $newDate; ?></span>
         </p>
-        <p><a href="#" class="changes" style="text-decoration:none;">Click here to report changes or errors​.</a></p>
+        <p><a href="contact.php" class="changes" style="text-decoration:none;">Click here to report changes or errors​.</a></p>
     </div>
-    <p class="texts" style="font-weight:700;">​​​In sequence by the headquarters city:​</p>
+    <br>
+    <p class="texts">​​​In sequence by the headquarters city:​</p>
 </div>
 <!-- Table -->
 <div class="container">
@@ -49,31 +52,34 @@ $newDate = date("M j, Y", strtotime($date));
             </thead>
             <tbody>
             <?php
-$sql = "SELECT GovId, ElectionAuthority FROM governments WHERE webgroup = 'Building'";
+$sql = "SELECT *
+FROM governments
+INNER JOIN addresses
+ON governments.GovId = addresses.GovId
+WHERE governments.webgroup = 'Building'
+ORDER BY addresses.HQphysicalCity ASC";
+
 $query = mysqli_query($con, $sql);
-while ($row_gov = mysqli_fetch_array($query)) {
-    $govid = $row_gov["GovId"];
-    $kty_nbr = $row_gov["ElectionAuthority"];
+
+while ($row = mysqli_fetch_array($query)) {
+    $govid = $row["GovId"];
+    $kty_nbr = $row["ElectionAuthority"];
+
+    $website = $row["WebsiteURL"];
+
+    if ($website == "") {
+        $pb = $row["PublicBodyNameFormal"];
+
+    } else {
+        $pb = '<a href="//' . $row["WebsiteURL"] . '" class="link" target="_blank">' . $row["PublicBodyNameFormal"] . '</a>';
+    }
 
     $sql = "SELECT namesimple FROM kountynbrs WHERE eiauthority = '" . $kty_nbr . "'";
     $query_kty = mysqli_query($con, $sql);
     while ($row_kty = mysqli_fetch_array($query_kty)) {
 
-        $sql = "SELECT * FROM addresses WHERE GovId = '" . $govid . "'";
-        $result = mysqli_query($con, $sql);
-        while ($row = mysqli_fetch_array($result)) {
-
-            $website = $row["WebsiteURL"];
-
-            if ($website == "") {
-                $pb = $row["PublicBodyNameFormal"];
-
-            } else {
-                $pb = '<a href="//' . $row["WebsiteURL"] . '" class="link" target="_blank">' . $row["PublicBodyNameFormal"] . '</a>';
-            }
-
-            $output .=
-                '<tr>
+        echo
+            '<tr>
                 <td><p><span>' . $pb . '<br>
                 <small>' . $row_kty["namesimple"] . '</small></span></p></td>
        <td><p><span>' . $row["FoiaPhysicalAddress"] . '<br />&#8203;
@@ -82,12 +88,9 @@ while ($row_gov = mysqli_fetch_array($query)) {
        <td><p><span>' . $row["FoiaPhone"] . '</span></p></td>
        </tr>';
 
-        }
-
     }
-}
-echo $output;
 
+}
 mysqli_close($con);
 ?>
 

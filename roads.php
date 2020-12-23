@@ -30,7 +30,7 @@ $newDate = date("M j, Y", strtotime($date));
     <div class="text-center">
         <p class="citizen"> &#169; Citizen Participation Institute. <span class="date"> Last updated on <?php echo $newDate; ?></span>
         </p>
-        <p><a href="#" class="changes" style="text-decoration:none;">Click here to report changes or errors​.</a></p>
+        <p><a href="contact.php" class="changes" style="text-decoration:none;">Click here to report changes or errors​.</a></p>
 
         <p class="texts"><b>Inside municipalities, the roads are maintained by the city, village, or town governments.
                 In counties that do not have townships, rural roads are maintained by Road Districts. In counties that
@@ -44,7 +44,7 @@ $newDate = date("M j, Y", strtotime($date));
             <thead style="background-color: #5040ae; color:#fff;">
                 <tr>
                     <!--the table heading -->
-                    <th width="35%">Public Body Name</th>
+                    <th width="25%">Public Body Name</th>
                     <th width="25%">FOIA Address</th>
                     <th width="15%"><span style="font-weight:normal">&#8203;</span><strong>FOIA Email</strong></th>
                     <th width="25%">Office Phone</th>
@@ -75,30 +75,34 @@ $total_records = $total_records['total_records'];
 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 $second_last = $total_no_of_pages - 1; // total pages minus 1
 
-$sql = "SELECT GovId, ElectionAuthority FROM governments WHERE webgroup = 'Road' LIMIT $offset, $total_records_per_page";
+$sql = "SELECT *
+FROM governments
+INNER JOIN addresses
+ON governments.GovId = addresses.GovId
+WHERE governments.webgroup = 'Road'
+ORDER BY addresses.HQphysicalCity ASC
+LIMIT $offset, $total_records_per_page";
+
 $query = mysqli_query($con, $sql);
-while ($row_gov = mysqli_fetch_array($query)) {
-    $govid = $row_gov["GovId"];
-    $kty_nbr = $row_gov["ElectionAuthority"];
+
+while ($row = mysqli_fetch_array($query)) {
+    $govid = $row["GovId"];
+    $kty_nbr = $row["ElectionAuthority"];
+
+    $website = $row["WebsiteURL"];
+
+    if ($website == "") {
+        $pb = $row["PublicBodyNameFormal"];
+
+    } else {
+        $pb = '<a href="//' . $row["WebsiteURL"] . '" class="link" target="_blank">' . $row["PublicBodyNameFormal"] . '</a>';
+    }
 
     $sql = "SELECT namesimple FROM kountynbrs WHERE eiauthority = '" . $kty_nbr . "'";
     $query_kty = mysqli_query($con, $sql);
     while ($row_kty = mysqli_fetch_array($query_kty)) {
 
-        $sql = "SELECT * FROM addresses WHERE GovId = '" . $govid . "'  ORDER BY PublicBodyNameFormal DESC";
-        $result = mysqli_query($con, $sql);
-        while ($row = mysqli_fetch_array($result)) {
-
-            $website = $row["WebsiteURL"];
-
-            if ($website == "") {
-                $pb = $row["PublicBodyNameFormal"];
-
-            } else {
-                $pb = '<a href="//' . $row["WebsiteURL"] . '" class="link" target="_blank">' . $row["PublicBodyNameFormal"] . '</a>';
-            }
-
-            $output .=
+        echo
                 '<tr>
                 <td><p><span>' . $pb . '</span></p></td>
        <td><p><span>' . $row["FoiaPhysicalAddress"] . '<br />&#8203;
@@ -110,9 +114,6 @@ while ($row_gov = mysqli_fetch_array($query)) {
         }
 
     }
-}
-echo $output;
-
 mysqli_close($con);
 ?>
 
