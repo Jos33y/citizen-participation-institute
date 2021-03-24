@@ -46,11 +46,9 @@
     <?php  include('include/bg-header.php');  ?>
 
     <div class="index text-center">
-      <br>
-
       <h2 class="header-text">Citizen Participation Institute</h2> <br>
       <h4 class="sub-text">Stand up, Step Forward, and Make a Difference!</h4>
-      <img src="images/4869420be83.png" alt="">
+      <img src="images/4869420be83.png" alt="" class="header-img">
     </div>
 
   </div>
@@ -69,7 +67,7 @@
         <div class="col-md-4">
           <div class="book-image">
             <a href="uploads/2021_401-candidatepacketkit-public.pdf" target="_blank">
-              <img src="images/2021-401-candidatepacketkit-cover_orig.jpg" width="250" height="320" alt="Book">
+              <img src="images/2021-401-candidatepacketkit-cover_orig.jpg" class="book" alt="Book">
             </a>
           </div>
           <div class="caption"> Click the picture to get your packet</div>
@@ -77,13 +75,13 @@
         </div>
         <div class="col-md-8">
           <h2 class="text-one"><em> ​Local election nomination papers are now available</em> </h2>
-          <p style="font-size: 25px;"> There is a great shortage of candidates for village boards, city councils,
+          <p class="sub-text-one"> There is a great shortage of candidates for village boards, city councils,
             school, library, park, fire and other elected boards. The election is in April, but nomination papers must
             be turned in before Christmas! In most cases 50 or fewer valid signatures are enough, and you can get a free
             list from your county clerk of neighbors eligible to sign. You can download the packet of forms and handy
             instructions from this page.</p>
 
-          <p><a style="text-decoration: none; font-size: 25px; color: #d75f04;"
+          <p><a style="text-decoration: none;"
               href="uploads/2021_401-candidatepacketkit-public.pdf" target="_blank" class="para-link">
               Click here to download your nomination papers, now.</a></p>
         </div>
@@ -101,24 +99,30 @@
 
     <div class="container">
       <div class="first-col">
-        <div class="row">
-          <div class="col-md-6">
-            <ul class="list">
-              <li><a href="open-government.php">Open Government</a></li>
-              <li><a href="elections.php">Elections</a></li>
-              <li><a href="about.php">What We Do</a></li>
-              <li><a href="donate.php">Donate</a></li>
-            </ul>
-
+        <div class="row list">
+          <div class="col-lg-3 col-md-4 col-6">
+          <a href="open-government.php">Open Government</a>
           </div>
-          <div class="col-md-6">
-            <ul class="list">
-              <li><a href="volunteer.php">Volunteer</a></li>
-              <li><a href="uploads/2019_localelectionsguide_11.pdf" target="_blank">Local Elections Guide</a></li>
-              <li><a href="uploads/2021_401-candidatepacketkit-public.pdf" target="_blank">Nomination Forms</a></li>
-              <li><a href="">Nomination Challenges</a></li>
-            </ul>
-
+          <div class="col-lg-3 col-md-4 col-6">
+          <a href="elections.php">Elections</a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+          <a href="about.php">What We Do</a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+          <a href="donate.php">Donate</a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+          <a href="volunteer.php">Volunteer</a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+          <a href="uploads/2019_localelectionsguide_11.pdf" target="_blank">Local Elections Guide</a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+          <a href="uploads/2021_401-candidatepacketkit-public.pdf" target="_blank">Nomination Forms</a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-6">
+          <a href="">Nomination Challenges</a>
           </div>
         </div>
       </div>

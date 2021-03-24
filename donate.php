@@ -42,11 +42,9 @@
 
 <body>
     <div class="bg-donate">
-
         <?php  include('include/bg-header.php');  ?>
-
-        <div class="text-left">
-            <img src="images/4869420be83.png" alt="">
+        <div class="text-space">
+          <!--  <img src="images/4869420be83.png" alt=""> -->
         </div>
 
     </div>
@@ -56,7 +54,6 @@
         <div class="first-col">
 
             <h2 class="donate-head">Your donations are needed </h2>
-            <br>
             <p class="donate-para">Although our management is unpaid and we rely upon volunteer labor, we have
                 operational expenses for utilities, postage, printing, and some staff and professional services. Your
                 tax-deductible contribution,

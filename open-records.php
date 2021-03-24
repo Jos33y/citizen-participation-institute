@@ -45,8 +45,8 @@
 
         <?php  include('include/bg-header.php');  ?>
 
-        <div class="text-left">
-            <img src="images/4869420be83.png" alt="">
+        <div class="text-space">
+          <!--  <img src="images/4869420be83.png" alt=""> -->
         </div>
 
     </div>
@@ -55,7 +55,7 @@
         <div class="first-col">
             <h3 class="resolve-two"> Open Records </h3>
 
-            <p style="color: #5040ae; font-size: 95%; font-style: italic;">“It is declared to be the public policy
+            <p class="resolve-p">“It is declared to be the public policy
                 of the State of Illinois that all persons are entitled to full
                 and complete information regarding the affairs of government and the official acts and policies of those
                 who represent them as public officials and public employees.... It is a fundamental obligation of

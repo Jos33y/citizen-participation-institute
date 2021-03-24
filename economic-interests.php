@@ -45,8 +45,8 @@
 
         <?php  include('include/bg-header.php');  ?>
 
-        <div class="text-left">
-            <img src="images/4869420be83.png" alt="">
+        <div class="text-space">
+           <!-- <img src="images/4869420be83.png" alt=""> -->
         </div>
 
     </div>
@@ -55,7 +55,7 @@
         <div class="first-col">
             <h3 class="resolve-two"> Economic Interests </h3>
 
-            <p style="margin: 3% 8%; color: #5040ae; font-size: 95%; font-style: italic;">
+            <p class="resolve-p">
                 “All candidates for or holders of state offices and all members of a Commission or Board created by this
                 Constitution shall file a verified statement of their economic interests,as provided by law. The General
                 Assembly by law may impose a similar requirement upon candidates for, or holders of, offices in units of

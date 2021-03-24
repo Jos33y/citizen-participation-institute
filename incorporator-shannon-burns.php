@@ -13,7 +13,7 @@ $title = "Incorporator Shannon Burns";
 
             <img src="images/1524409.jpg" alt="images" class="directors-image">
 
-            <img src="images/4869420.png" alt="logo-picture">
+            <img src="images/4869420.png" alt="logo-picture" class="director-logo">
         </div>
         <div class="col-md-8">
             <p>

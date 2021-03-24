@@ -45,9 +45,9 @@
 
         <?php  include('include/bg-header.php');  ?>
 
-        <div class="text-left">
+        <div class="text-space">
 
-            <img src="images/4869420be83.png" alt=""><span class="emp-text">Employment</span>
+           <!-- <img src="images/4869420be83.png" alt=""><span class="emp-text">Employment</span> -->
         </div>
 
     </div>

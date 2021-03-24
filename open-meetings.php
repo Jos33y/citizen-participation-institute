@@ -45,8 +45,8 @@
 
         <?php  include('include/bg-header.php');  ?>
 
-        <div class="text-left">
-            <img src="images/4869420be83.png" alt="">
+        <div class="text-space">
+           <!-- <img src="images/4869420be83.png" alt=""> -->
         </div>
 
     </div>
@@ -55,7 +55,7 @@
         <div class="first-col">
             <h3 class="resolve-two"> Open Meetings </h3>
 
-            <p style="color: #5040ae; font-size: 95%; font-style: italic;">“It is the public policy of this State that
+            <p class="resolve-p">“It is the public policy of this State that
                 public bodies exist to aid in the conduct of the people's business and that the people have a right to
                 be informed as to the conduct of their business. In order that the people shall be informed, the General
                 Assembly finds and declares that it is the intent of this Act to ensure that the actions of public

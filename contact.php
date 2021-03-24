@@ -45,8 +45,8 @@
 
         <?php  include('include/bg-header.php');  ?>
 
-        <div class="text-left">
-            <img src="images/4869420be83.png" alt="">
+        <div class="text-space">
+         <!--   <img src="images/4869420be83.png" alt=""> -->
         </div>
 
     </div>
@@ -54,7 +54,7 @@
     <div class="container">
         <div class="first-col">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-lg-7">
                     <h2 class="donate-head"> Contact us</h2>
 
                     <p>We are always happy to hear from you.</p>
@@ -109,7 +109,7 @@
                 </div>
 
 
-                <div class="col-md-5" style="margin-left: 10%;">
+                <div class="col-lg-5">
                     <h2 class="donate-head"> Email addresses</h2>
 
                     <span> General: <a style="text-decoration: none;" href="mailto:Info@CitizenParticipation.Org"

@@ -45,11 +45,9 @@
 
         <?php  include('include/bg-header.php');  ?>
 
-        <div class="text-left">
-
-            <img src="images/4869420be83.png" alt="">
+        <div class="text-left text-space">
+            <!--  <img src="images/4869420be83.png" alt=""> -->
         </div>
-
     </div>
 
     <div class="container">
@@ -57,7 +55,7 @@
             <p>The Institute has many opportunities for volunteers to help, more than we have listed here. Click the
                 boxes that describe you, submit this form, and we will contact you.
             </p>
-
+            <hr>
             <form method="POST">
                 <div class="form-group">
                     <label for="interest">I'm interested in... </label>
@@ -120,9 +118,11 @@
                     </div>
                     <br>
                     <label for="other">If other, please specify </label><br>
-                    <textarea name="other" id="" cols="45" rows="9"></textarea>
+                    <textarea name="other" id="" cols="38" rows="7"></textarea>
                 </div>
-                <br>
+                </p>
+                <hr>
+
                 <div class="form-group">
                     <label for="time">My availability... </label>
                     <div class="form-check">
@@ -153,9 +153,9 @@
 
                     <br>
                     <label for="other">If other, please specify </label><br>
-                    <textarea name="other-time" id="" cols="45" rows="9"></textarea>
+                    <textarea name="other-time" id="" cols="38" rows="7"></textarea>
                 </div>
-                <br>
+                <hr>
                 <div class="form-group">
                     <label for="time">More about me... </label>
                     <div class="form-check">
@@ -211,10 +211,10 @@
                             <input type="checkbox" class="form-check-input" value="">I am a retired attorney
                         </label>
                     </div>
-
-                    <br>
                 </div>
-                <div class="col-md-6">
+                <hr>
+
+                <div class="col-md-12">
                     <div class="form-group">
                         <table class="table table-borderless">
                             <p><span class="red">*</span><i> Indicates required field</i></p>
@@ -274,8 +274,8 @@
                                 <tr>
                                     <td colspan="2">
                                         Comment <span class="red">*</span>
-                                        <textarea name="comment" class="form-control" id="" cols="45"
-                                            rows="9"></textarea>
+                                        <textarea name="comment" class="form-control" id="" cols="38"
+                                            rows="5"></textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -293,7 +293,7 @@
     <hr style="margin-top: 20%;" width="70%">
     <div class="footer">
         <div class="col-md-12">
-            <p class="text-center" style="font-size: 13px; color: darkred;"> &copy 2020 All right reserved Citizen
+            <p class="text-center" style="font-size: 12px; color: darkred;"> &copy 2021 All right reserved Citizen
                 Participation Institute</p>
         </div>
     </div>

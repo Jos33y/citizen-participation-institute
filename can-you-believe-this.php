@@ -43,8 +43,8 @@
 
     <?php  include('include/bg-header.php');  ?>
 
-    <div class="text-left">
-        <img src="images/4869420be83.png" alt="">
+    <div class="text-space">
+      <!--  <img src="images/4869420be83.png" alt=""> -->
     </div>
 
 </div>

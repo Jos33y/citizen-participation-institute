@@ -1,6 +1,7 @@
 <header>
 
     <div class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#"><img src="images/4869420be83.png" alt="" class="logo"></a>
         <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon my-toggler "></span>
         </button>

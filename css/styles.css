@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Roboto&family=Roboto+Slab:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
 body {
     height: 100%;
@@ -23,7 +24,7 @@ header {
 
 
 .nav-link {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     margin: 8px;
     color: #fff !important;
@@ -67,36 +68,51 @@ header {
     display: block;
 }
 
+.logo{
+    border-radius: 50%;
+    background-color: #fff;
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+}
 
 .bg-header {
-    background: url('../images/bg-hand.jpg');
-    width: 100vw;
-    height: 100vh;
+    background: url('../images/citizen-bg.jpg');
+    width: 100%;
+    height: 100%;
     background-size: cover;
 
 }
 
 .index {
-    padding-top: 12%;
+    margin: auto;
+    margin-top: 24%;
+    line-height: 0;
 }
 
 .header-text {
-    font-size: 57px;
-    font-weight: 600;
-    color: #ffffff;
-    font-family: 'Acme', sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
 
 .sub-text {
-    font-size: 26px;
-    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
     font-family: 'Courgette', cursive;
+}
+.header-img{
+    width: 140px;
+    height: 140px;
+    
 }
 
 .first-col {
     margin: 2%;
-    margin-top: 8%;
+    margin-top: 5%;
 
 }
 
@@ -104,6 +120,9 @@ header {
     width: 255px;
     background: #fff;
     border: 1px solid rgb(22, 22, 22);
+}
+.book-image .book{
+    width: 100%;
 }
 
 .caption {
@@ -117,6 +136,9 @@ header {
     color: #a82e2e;
 
 }
+.sub-text-one{
+    font-size: 25px;
+}
 
 .first-col .btn {
     background-color: #d75f04;
@@ -124,6 +146,17 @@ header {
     padding: 8px 30px;
     margin-bottom: 3%;
 }
+.resolve .btn {
+    background-color: #d75f04;
+    color: #fff;
+    padding: 8px 30px;
+    margin-bottom: 3%;
+}
+.para-link{
+    font-size: 23px;
+    color: #d75f04;
+}
+
 
 .btn {
     background-color: #d75f04;
@@ -134,19 +167,23 @@ header {
     list-style-type: none;
 }
 
-.list li a {
+.list a {
     color: #d75f04;
     text-transform: uppercase;
     font-family: 'Bitter', serif;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 2;
     text-decoration: none;
 
 }
 
 /** Open Government Styles */
+.bg-brown .text-space{
+    height: 120px;
+}
 .bg-open-government {
-    background: url('../images/open-government.jpg');
+    background: url('../images/open-govt-bg.jpg');
+    width: 100%;
     background-size: cover;
 }
 
@@ -184,10 +221,15 @@ header {
     display: inline;
     margin: 1%;
 }
+.resolve-p{
+    color: #5040ae; 
+    font-size: 95%;
+    font-style: italic;
+}
 
 /** Election Styles **/
 .bg-election {
-    background: url('../images/vote.png');
+    background: url('../images/election-bg.jpg');
     background-size: cover;
 }
 
@@ -199,7 +241,8 @@ header {
 
 /** Donate Styles **/
 .bg-donate {
-    background: url('../images/donate.png');
+    background: url('../images/donate-bg.jpg');
+    width: 100%;
     background-size: cover;
 }
 
@@ -219,7 +262,7 @@ header {
 
 /** Employment Styles **/
 .bg-employment {
-    background: url('../images/employment.png');
+    background: url('../images/employment-bg.png');
     background-size: cover;
 }
 
@@ -246,7 +289,7 @@ header {
 /* About US Styles */
 
 .bg-about-us {
-    background: url('../images/about.jpg');
+    background: url('../images/about-bg.jpg');
     background-size: cover;
 }
 
@@ -259,10 +302,14 @@ header {
 
 /* Volunteer Styles **/
 .bg-volunteer {
-    background: url('../images/volunteer.png');
+    background: url('../images/volunteer-bg.jpg');
+    width: 100%;
+    height: 100%;
     background-size: cover;
 }
-
+.text-space{
+    height: 300px;
+}
 .red {
     color: red;
 }
@@ -291,7 +338,8 @@ header {
 
 /** Contact US Styles **/
 .bg-contact {
-    background: url('../images/contact-us.png');
+    background: url('../images/contacti-bg.jpg');
+    width: 100%;
     background-size: cover;
 }
 
@@ -419,3 +467,372 @@ a.link {
     font-size: 18px;
     line-height: 1.5;
 }
+
+@media screen and (max-width: 800px) {
+    .logo{
+        width: 70px;
+        height: 70px;
+        margin-left: 10px;
+    }
+    
+    .bg-header {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+    }
+    
+    .index {
+        margin: auto;
+        margin-top: 20%;
+        line-height: 0;
+    }
+    
+    .header-text {
+        font-size: 22px;
+    }
+    
+    .sub-text {
+        font-size: 15px;
+    }
+    .header-img{
+        width: 80px;
+        height: 80px;
+        
+    }
+    
+    .text-one {
+        font-size: 30px;    
+    }
+    .sub-text-one{
+        font-size: 18px;
+    }
+    .book-image {
+        margin-top: 20px;
+        width: 200px;
+        background: #fff;
+        border: 1px solid rgb(22, 22, 22);
+    }
+    .book-image .book{
+        width: 90%;
+    }
+    .caption {
+        font-size: 13px;
+    }
+    .para-link{
+        font-size: 18px;
+        color: #d75f04;
+    }
+    .first-col .col-md-4{
+        margin: 0;
+        padding: 5px 0;
+    }
+    .list a {
+        font-size: 13px;
+    }
+    .text-space{
+        height: 160px;
+    }
+      /** Employment Styles **/
+.emp-text {
+    font-size: 50px;
+}
+
+.emp-head {
+    font-size: 2em;
+}
+
+.emp-para {
+    font-size: 20px;
+}
+
+/* About US Styles */
+.about-para {
+    font-size: 16px;
+}
+.open-list li a{
+   margin: 10px;
+}
+
+
+  }
+
+ 
+  
+@media screen and (max-width: 540px) {
+    
+.nav-link {
+    font-size: 12px;
+}
+
+    .logo{
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+    }
+    
+    .bg-header {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .index {
+        margin: auto;
+        margin-top: 15%;
+        line-height: 0;
+    }
+    
+    .header-text {
+        margin-left: 16%;
+        margin-bottom: 8%;
+        width: 70%;
+        font-size: 16px;
+    }
+    
+    .sub-text {
+        display: none;
+    }
+    .header-img{
+        display: none;
+      
+        
+    }
+    .text-one {
+        margin-top: 10px;
+        font-size: 25px;    
+    }
+    .sub-text-one{
+        font-size: 15px;
+    }
+    .book-image {
+        margin: auto;
+        margin-top: 10px;
+        width: 200px;
+        background: #fff;
+        border: 1px solid rgb(22, 22, 22);
+    }
+    .book-image .book{
+        width: 90%;
+    }
+    .caption {
+        text-align: center;
+        font-size: 11px;
+    }
+    .para-link{
+        font-size: 15px;
+        color: #d75f04;
+    }
+    .first-col .btn {
+        background-color: #d75f04;
+        color: #fff;
+        font-size: 14px;
+        padding: 8px 20px;
+        margin-bottom: 3%;
+    }
+    .first-col .col-md-4{
+        margin: 0;
+        padding: 5px 0;
+    }
+  .first-col span{
+    font-size: 14px;
+  }
+    .list a {
+     font-size: 12px;
+    
+    }
+    /* Volunteer Styles **/
+.bg-volunteer {
+    background: url('../images/volunteer-bg-sm.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+.text-space{
+    height: 270px;
+}
+
+.form-check {
+    padding-left: 15px;
+    margin-bottom: 12px;
+    font-size: 14px;
+
+}
+
+.form-check-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+}
+.first-col label, p{
+    font-size: 14px;
+}
+.first-col .col-md-12{
+    padding: 0;
+    margin: 0;
+}
+.first-col td{
+    padding: 8px  5px;
+}
+.first-col tbody{
+    font-size: 14px;
+}
+.first-col input::placeholder{
+    font-size: 13px;
+}
+
+/** Donate Styles **/
+.bg-donate {
+    background: url('../images/donate-bg.jpg');
+    width: 100%;
+    background-size: cover;
+}
+.bg-donate .text-space{
+    height: 75px;
+}
+.donate-head {
+    font-size: 1.8em;
+    color: #333333;
+}
+
+.donate-para {
+    font-size: 14px;
+    letter-spacing: .5px;
+    line-height: 1.5;
+    padding: .5em 0;
+}
+.bg-contact {
+    background: url('../images/contacti-bg.jpg');
+    width: 100%;
+    background-size: cover;
+}
+.bg-contact .text-space{
+    height: 75px;
+}
+   /** Employment Styles **/
+   .bg-employment .text-space{
+    height: 100px;
+}
+   .emp-text {
+    font-size: 50px;
+}
+
+.emp-head {
+    font-size: 1.5em;
+}
+
+.emp-para {
+    font-size: 14px;
+}
+/* About US Styles */
+.bg-about-us .text-space{
+    height: 75px;
+}
+.about-para {
+    font-size: 14px;
+}
+.records-head {
+    font-size: 1.6em;
+}
+
+.records p {
+    font-size: 14px;
+}
+.director-logo{
+    display: none;
+}
+.directors-image {
+    margin-top: 10%;
+}
+.bg-open-government .text-space{
+    height: 75px;
+}
+.open-head {
+    font-size: 1.6em;
+}
+
+.open-text {
+    font-size: 14px;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.open-para {
+    font-size: 14px;
+}
+.open-list li a{
+    margin: 8px;
+    font-size: 13px;
+ }
+
+ /** Resolve the problem Styles **/
+.resolve-one {
+    font-size: 1.5em;
+}
+
+.resolve-two {
+    font-size: 1.4em;
+}
+
+.resolve p {
+    font-size: 14px;
+}
+.resolve-p{
+    font-size: 90%;
+}
+
+.bg-election .text-space{
+    height: 150px;
+}
+.records h3{
+    font-size: 20px;
+}
+.resolve h3{
+    font-size: 20px;
+}
+
+.resolve .btn {
+    padding: 5px 15px;
+    font-size: 14px;
+}
+ 
+  }
+@media screen and (max-width: 375px) {
+    
+    .index {
+        margin-top: 16%;
+    }
+    
+    .header-text {
+        margin-left: 16%;
+        margin-bottom: 8%;
+        width: 70%;
+        font-size: 14px;
+    }
+
+    .text-space{
+        height: 230px;
+    }
+    .bg-donate .text-space{
+        height: 70px;
+    }
+    .bg-contact .text-space{
+        height: 65px;
+    }
+    .donate-head {
+        font-size: 1.5em;
+        color: #333333;
+    }
+    .records-head {
+        font-size: 1.4em;
+    }
+    
+    .records p {
+        font-size: 13px;
+    }
+    .directors-image {
+        margin-top: 5%;
+    }
+  }

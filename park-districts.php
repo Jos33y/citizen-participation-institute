@@ -108,13 +108,16 @@ while ($row = mysqli_fetch_array($query)) {
     $query_kty = mysqli_query($con, $sql);
     while ($row_kty = mysqli_fetch_array($query_kty)) {
 
+        $oEmail = $row["FoiaEmail"];
+        $email = split( "@", $oEmail);
+     
         echo
             '<tr>
                 <td><p><span>' . $pb . '<br>
                 <small>' . $row_kty["namesimple"] . '</small></span></p></td>
        <td><p><span>' . $row["FoiaPhysicalAddress"] . '<br />&#8203;
        <strong>' . $row["FoiaMailingCity"] . '</strong>' . ' ' . $row["FoiaState"] . ' ' . $row["FoiaMailingZip"] . '</span></p></td>
-       <td><p><span>' . $row["FoiaEmail"] . '</span></p></td>
+       <td><p><span>' . $email . '</span></p></td>
        <td><p><span>' . $row["FoiaPhone"] . '</span></p></td>
        </tr>';
 

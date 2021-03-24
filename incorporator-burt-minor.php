@@ -14,7 +14,7 @@ $title = "Incorporator Burt Minor
 
                 <img src="images/507289.jpg" alt="images" class="directors-image">
 
-                <img src="images/4869420.png" alt="logo-picture">
+                <img src="images/4869420.png" alt="logo-picture" class="director-logo">
             </div>
             <div class="col-md-8">
                 <p>
