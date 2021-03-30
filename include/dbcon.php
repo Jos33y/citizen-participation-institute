@@ -19,7 +19,7 @@ $DB = new PDO(DB_DRIVER . ':host=' . DB_HOST . ';dbname=' . DB_DATABASE, DB_USER
 } catch (Exception $ex) {
 echo $ex->getMessage();
 die;
-}
+} 
 /*
 if (!$con) {
     die("Connection failed: " . mysqli_connect_error());

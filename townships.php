@@ -133,7 +133,7 @@ $(document).ready(function () {
             }, 500);
 
             // you can remove the above code and can use directly this function
-            // displayRecords(limit, offset);
+            displayRecords(limit, offset);
 
         }
     });

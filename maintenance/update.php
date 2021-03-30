@@ -636,13 +636,13 @@ include('header.php');
                             <td width="54%">
                                 <label for="gov" class="sr-only"> Physical Address </label>
                                 <input type="text" id="myAddress" class="form-control" name="paddress"
-                                    value="<?php echo $hqpaddress ;?>" required placeholder="">
+                                    value="<?php echo $hqpaddress ;?>"  placeholder="">
                                 <td />
 
                             <td width="20%">
                                 <label for="gov" class="sr-only">City </label>
                                 <input type="text" id="myCity" class="form-control" name="pcity"
-                                    value="<?php echo $hqpcity ;?>" required placeholder="">
+                                    value="<?php echo $hqpcity ;?>" placeholder="">
                             </td>
 
                             <td width="6%">

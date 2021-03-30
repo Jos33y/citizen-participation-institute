@@ -591,12 +591,12 @@ if ($hqpaddress == $newpaddress) {
                             <td width="54%">
                                 <label for="gov" class="sr-only"> Physical Address </label>
                                 <input type="text" class="form-control" id="" value="' . $hqpaddress . '"
-                                    required placeholder="" readonly>
+                                    placeholder="" readonly>
 
 
                                         <div class="changed">
                                         <input type="text" class="form-control" name="newpaddress"
-                                        value="' . $newpaddress . '" required placeholder="" readonly>
+                                        value="' . $newpaddress . '" placeholder="" readonly>
                                         </div>
                                         <td />';
 
@@ -621,7 +621,7 @@ if ($hqpcity == $newpcity) {
 
                                         <div class="changed">
                                         <input type="text" class="form-control" name="newpcity"
-                                        value="' . $newpcity . '" required placeholder="" readonly>
+                                        value="' . $newpcity . '" placeholder="" readonly>
                                         </div>
                                         </td>
 
