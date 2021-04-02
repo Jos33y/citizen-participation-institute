@@ -68,32 +68,32 @@
                                 <tbody>
                                     <tr>
                                         &nbsp;&nbsp; Name <span class="red">*</span>
-                                        <td><input type="text" class="form-control" placeholder="First name" id="fname">
+                                        <td><input type="text" name="fName" class="form-control" placeholder="First name" id="fname">
                                         </td>
-                                        <td><input type="text" class="form-control" placeholder="Last name" id="lname">
+                                        <td><input type="text" name="lName" class="form-control" placeholder="Last name" id="lname">
                                         </td>
                                     </tr <tr>
                                     <td colspan="2">
                                         Email <span class="red">*</span>
-                                        <input type="email" class="form-control" placeholder="Email" id="email">
+                                        <input type="email" name="email" class="form-control" placeholder="Email" id="email">
                                     </td>
                                     </>
                                     <tr>
                                         <td colspan="1">
                                             Phone Number (daytime)
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="pNumberDay" class="form-control">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="1">
                                             Phone Number (evening)
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="pNumberNight" class="form-control">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">
                                             Comment <span class="red">*</span>
-                                            <textarea name="comment" class="form-control" id="" cols="45"
+                                            <textarea name="comment" name="comment" class="form-control" id="" cols="45"
                                                 rows="5"></textarea>
                                         </td>
                                     </tr>
@@ -144,3 +144,34 @@
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['submit'])) {
+    
+$firstName = $_POST['fName'];
+$lastName = $_POST['lName'];
+$email = $_POST['email'];
+$dayPhone = $_POST['pNumberDay'];
+$nightPhone = $_POST['pNumberNight'];
+$comment = $_POST['comment'];
+
+$to = "director@citizenparticipation.org ";
+$subject = "Contact Information";
+$txt =  "First Name: " . $firstName . "\n" . 
+        "last Name: " . "$lastName" . "\n" . 
+        "Email: " . "$email" . "\n" . 
+        "Phone Number(Day): " . "$dayPhone" . "\n" . 
+        "Phone Number(Night): " . "$nightPhone" . "\n" . 
+        "Comment " . "$comment" .  "\n"; 
+
+$sendmail = mail($to, $subject, $txt);
+
+if ($sendmail) {
+
+    echo "<script>alert('Message Sent');</script>";
+
+}
+
+}
+
+?>

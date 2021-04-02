@@ -43,7 +43,7 @@
 <body>
     <div class="bg-volunteer">
 
-        <?php  include('include/bg-header.php');  ?>
+        <?php include 'include/bg-header.php';?>
 
         <div class="text-left text-space">
             <!--  <img src="images/4869420be83.png" alt=""> -->
@@ -222,60 +222,60 @@
                             <tbody>
                                 <tr>
                                     &nbsp;&nbsp; Name <span class="red">*</span>
-                                    <td><input type="text" class="form-control" placeholder="First name" id="fname">
+                                    <td><input type="text" class="form-control" placeholder="First name" name="fName"  id="fname" required>
                                     </td>
-                                    <td><input type="text" class="form-control" placeholder="Last name" id="lname"></td>
+                                    <td><input type="text" class="form-control" placeholder="Last name" name="lName" id="lname" required></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                         Email <span class="red">*</span>
-                                        <input type="email" class="form-control" placeholder="Email" id="email">
+                                        <input type="email" class="form-control" placeholder="Email" name="email" id="email" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                         Address
-                                        <input type="text" class="form-control" placeholder="Line 1" id="lineone">
+                                        <input type="text" class="form-control" placeholder="Line 1" name="address" id="lineone">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <input type="text" class="form-control" placeholder="Line 2" id="linetwo">
+                                        <input type="text" class="form-control" placeholder="Line 2" name="addressTwo" id="linetwo">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" class="form-control" placeholder="City">
+                                        <input type="text" class="form-control" placeholder="City" name="city">
                                     </td>
                                     <td>
-                                        <input type="text" class="form-control" placeholder="State">
+                                        <input type="text" class="form-control" placeholder="State" name="state">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" class="form-control" placeholder="Zip Code">
+                                        <input type="text" class="form-control" placeholder="Zip Code" name="zip">
                                     </td>
                                     <td>
-                                        <input type="text" class="form-control" placeholder="Country">
+                                        <input type="text" class="form-control" placeholder="Country" name="country">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="1">
                                         Phone Number (daytime)
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="pNumberDay">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="1">
                                         Phone Number (evening)
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="pNumberNight">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                         Comment <span class="red">*</span>
-                                        <textarea name="comment" class="form-control" id="" cols="38"
-                                            rows="5"></textarea>
+                                        <textarea name="comment" class="form-control" name="comment" id="" cols="38"
+                                            rows="5" required></textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -300,3 +300,45 @@
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['submit'])) {
+
+    $firstName = $_POST['fName'];
+    $lastName = $_POST['lName'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+    $addressTwo = $_POST['addressTwo'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $zip = $_POST['zip'];
+    $country = $_POST['country'];
+    $dayPhone = $_POST['pNumberDay'];
+    $nightPhone = $_POST['pNumberNight'];
+    $comment = $_POST['comment'];
+
+    $to = "director@citizenparticipation.org ";
+    $subject = "Volunteer Information";
+    $txt = "First Name: " . $firstName . "\n" .
+        "last Name: " . "$lastName" . "\n" .
+        "Email: " . "$email" . "\n" .
+        "Address One: " . "$address" . "\n" .
+        "Address Two: " . "$addressTwo" . "\n" .
+        "City: " . "$city" . "\n" .
+        "State: " . "$state" . "\n" .
+        "Zip: " . "$zip" . "\n" .
+        "Country: " . "$country" . "\n" .
+        "Phone Number(Day): " . "$dayPhone" . "\n" .
+        "Phone Number(Night): " . "$nightPhone" . "\n" .
+        "Comment " . "$comment" . "\n";
+
+    $sendmail = mail($to, $subject, $txt);
+
+    if ($sendmail) {
+        echo "<script>alert('Information Sent');</script>";
+
+    }
+
+}
+
+?>
