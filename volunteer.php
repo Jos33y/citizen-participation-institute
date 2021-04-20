@@ -61,59 +61,59 @@
                     <label for="interest">I'm interested in... </label>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value=""> Being a local area representative
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Being a local area representative"> Being a local area representative
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">Elections Research Project
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Elections Research Project">Elections Research Project
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">Public Information Project Research
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Public Information Project Research">Public Information Project Research
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">Public Meetings Project Research
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Public Meetings Project Research">Public Meetings Project Research
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">Write / Edit for our Publications
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Write / Edit for our Publications">Write / Edit for our Publications
 
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">Office / Secretarial / Clerical
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Office / Secretarial / Clerical">Office / Secretarial / Clerical
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">Web Page / Social Media / Data Base
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Web Page / Social Media / Data Base">Web Page / Social Media / Data Base
 
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">Accounting
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Accounting">Accounting
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">Legal
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Legal">Legal
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">Anything We Need
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Anything We Need">Anything We Need
                         </label>
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">Other
+                            <input type="checkbox" class="form-check-input" name="interest[]" value="Other">Other
                         </label>
                     </div>
                     <br>
